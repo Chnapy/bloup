@@ -3316,6 +3316,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:13.9.6"\
       ],\
       [\
+        "nx-cloud",\
+        "npm:13.2.2"\
+      ],\
+      [\
         "object-assign",\
         "npm:4.1.1"\
       ],\
@@ -4639,6 +4643,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react-hooks", "virtual:45e90f5f1fa4ac2c1939f65a495c34efead7da44259483758e0a92f1f9808e3d31df12dd6f37a8e869b14c596829063a9ba8cf51016f2e0ac2ee4aeab3ea6908#npm:4.3.0"],\
             ["jest", "virtual:45e90f5f1fa4ac2c1939f65a495c34efead7da44259483758e0a92f1f9808e3d31df12dd6f37a8e869b14c596829063a9ba8cf51016f2e0ac2ee4aeab3ea6908#npm:27.2.3"],\
             ["nx", "npm:13.9.6"],\
+            ["nx-cloud", "npm:13.2.2"],\
             ["prettier", "npm:2.6.2"],\
             ["react", "npm:17.0.2"],\
             ["react-dom", "virtual:45e90f5f1fa4ac2c1939f65a495c34efead7da44259483758e0a92f1f9808e3d31df12dd6f37a8e869b14c596829063a9ba8cf51016f2e0ac2ee4aeab3ea6908#npm:17.0.2"],\
@@ -8562,14 +8567,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ]],\
       ["@nrwl/workspace", [\
         ["npm:13.9.6", {\
-          "packageLocation": "./.yarn/unplugged/@nrwl-workspace-virtual-78871508d2/node_modules/@nrwl/workspace/",\
+          "packageLocation": "./.yarn/cache/@nrwl-workspace-npm-13.9.6-99568e574e-54d1353da3.zip/node_modules/@nrwl/workspace/",\
           "packageDependencies": [\
             ["@nrwl/workspace", "npm:13.9.6"]\
           ],\
           "linkType": "SOFT"\
         }],\
         ["virtual:45e90f5f1fa4ac2c1939f65a495c34efead7da44259483758e0a92f1f9808e3d31df12dd6f37a8e869b14c596829063a9ba8cf51016f2e0ac2ee4aeab3ea6908#npm:13.9.6", {\
-          "packageLocation": "./.yarn/unplugged/@nrwl-workspace-virtual-78871508d2/node_modules/@nrwl/workspace/",\
+          "packageLocation": "./.yarn/__virtual__/@nrwl-workspace-virtual-78871508d2/0/cache/@nrwl-workspace-npm-13.9.6-99568e574e-54d1353da3.zip/node_modules/@nrwl/workspace/",\
           "packageDependencies": [\
             ["@nrwl/workspace", "virtual:45e90f5f1fa4ac2c1939f65a495c34efead7da44259483758e0a92f1f9808e3d31df12dd6f37a8e869b14c596829063a9ba8cf51016f2e0ac2ee4aeab3ea6908#npm:13.9.6"],\
             ["@nrwl/devkit", "npm:13.9.6"],\
@@ -8607,7 +8612,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }],\
         ["virtual:e4bdf5ae7c61bbbe797b4a3f89a89ef5028a781a7495df6d5fcc49b9887da18f278b2fa3afcd41abe114098eb8df1d4bf031ad36fc8be6e3d6d66cbb82fd75ee#npm:13.9.6", {\
-          "packageLocation": "./.yarn/unplugged/@nrwl-workspace-virtual-735f2821bf/node_modules/@nrwl/workspace/",\
+          "packageLocation": "./.yarn/__virtual__/@nrwl-workspace-virtual-735f2821bf/0/cache/@nrwl-workspace-npm-13.9.6-99568e574e-54d1353da3.zip/node_modules/@nrwl/workspace/",\
           "packageDependencies": [\
             ["@nrwl/workspace", "virtual:e4bdf5ae7c61bbbe797b4a3f89a89ef5028a781a7495df6d5fcc49b9887da18f278b2fa3afcd41abe114098eb8df1d4bf031ad36fc8be6e3d6d66cbb82fd75ee#npm:13.9.6"],\
             ["@nrwl/devkit", "npm:13.9.6"],\
@@ -11672,6 +11677,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react-hooks", "virtual:45e90f5f1fa4ac2c1939f65a495c34efead7da44259483758e0a92f1f9808e3d31df12dd6f37a8e869b14c596829063a9ba8cf51016f2e0ac2ee4aeab3ea6908#npm:4.3.0"],\
             ["jest", "virtual:45e90f5f1fa4ac2c1939f65a495c34efead7da44259483758e0a92f1f9808e3d31df12dd6f37a8e869b14c596829063a9ba8cf51016f2e0ac2ee4aeab3ea6908#npm:27.2.3"],\
             ["nx", "npm:13.9.6"],\
+            ["nx-cloud", "npm:13.2.2"],\
             ["prettier", "npm:2.6.2"],\
             ["react", "npm:17.0.2"],\
             ["react-dom", "virtual:45e90f5f1fa4ac2c1939f65a495c34efead7da44259483758e0a92f1f9808e3d31df12dd6f37a8e869b14c596829063a9ba8cf51016f2e0ac2ee4aeab3ea6908#npm:17.0.2"],\
@@ -12481,7 +12487,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ]],\
       ["core-js", [\
         ["npm:3.21.1", {\
-          "packageLocation": "./.yarn/unplugged/core-js-npm-3.21.1-4b064616b4/node_modules/core-js/",\
+          "packageLocation": "./.yarn/cache/core-js-npm-3.21.1-4b064616b4-d68eddd831.zip/node_modules/core-js/",\
           "packageDependencies": [\
             ["core-js", "npm:3.21.1"]\
           ],\
@@ -12501,7 +12507,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ]],\
       ["core-js-pure", [\
         ["npm:3.21.1", {\
-          "packageLocation": "./.yarn/unplugged/core-js-pure-npm-3.21.1-8959cc165d/node_modules/core-js-pure/",\
+          "packageLocation": "./.yarn/cache/core-js-pure-npm-3.21.1-8959cc165d-00a5dff599.zip/node_modules/core-js-pure/",\
           "packageDependencies": [\
             ["core-js-pure", "npm:3.21.1"]\
           ],\
@@ -12876,7 +12882,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ]],\
       ["cypress", [\
         ["npm:9.5.3", {\
-          "packageLocation": "./.yarn/unplugged/cypress-npm-9.5.3-113ca8f14b/node_modules/cypress/",\
+          "packageLocation": "./.yarn/cache/cypress-npm-9.5.3-113ca8f14b-cfd2333fed.zip/node_modules/cypress/",\
           "packageDependencies": [\
             ["cypress", "npm:9.5.3"],\
             ["@cypress/request", "npm:2.88.10"],\
@@ -18147,6 +18153,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["tslib", "npm:2.3.1"],\
             ["v8-compile-cache", "npm:2.3.0"],\
             ["yargs-parser", "npm:20.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["nx-cloud", [\
+        ["npm:13.2.2", {\
+          "packageLocation": "./.yarn/cache/nx-cloud-npm-13.2.2-c3f6178851-0910611fc7.zip/node_modules/nx-cloud/",\
+          "packageDependencies": [\
+            ["nx-cloud", "npm:13.2.2"],\
+            ["axios", "npm:0.21.4"],\
+            ["chalk", "npm:4.1.0"],\
+            ["node-machine-id", "npm:1.1.12"],\
+            ["strip-json-comments", "npm:3.1.1"],\
+            ["tar", "npm:6.1.11"]\
           ],\
           "linkType": "HARD"\
         }]\

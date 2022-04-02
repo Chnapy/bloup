@@ -4538,6 +4538,7 @@ __metadata:
     eslint-plugin-react-hooks: 4.3.0
     jest: 27.2.3
     nx: 13.9.6
+    nx-cloud: 13.2.2
     prettier: ^2.5.1
     react: 17.0.2
     react-dom: 17.0.2
@@ -9882,6 +9883,21 @@ __metadata:
   version: 2.2.0
   resolution: "nwsapi@npm:2.2.0"
   checksum: 5ef4a9bc0c1a5b7f2e014aa6a4b359a257503b796618ed1ef0eb852098f77e772305bb0e92856e4bbfa3e6c75da48c0113505c76f144555ff38867229c2400a7
+  languageName: node
+  linkType: hard
+
+"nx-cloud@npm:13.2.2":
+  version: 13.2.2
+  resolution: "nx-cloud@npm:13.2.2"
+  dependencies:
+    axios: ^0.21.1
+    chalk: 4.1.0
+    node-machine-id: ^1.1.12
+    strip-json-comments: ^3.1.1
+    tar: 6.1.11
+  bin:
+    nx-cloud: bin/nx-cloud.js
+  checksum: 0910611fc7a098a4fe674d4df61c34ae4c2978969fdf9e946e8d6b91b945bce30f9d00a05497f92ba66b51c5d3eeb3961e0259d4d243c772cc9f736afc5842d9
   languageName: node
   linkType: hard
 
