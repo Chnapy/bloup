@@ -1,29 +1,6 @@
 version: '3.4'
 
 services:
-  # api:
-  #   build:
-  #     context: .
-  #     dockerfile: packages/api/Dockerfile
-  #   volumes:
-  #     - .:/usr/app
-  #   depends_on:
-  #     - mongodb
-  #   links:
-  #     - mongodb
-  #   environment:
-  #     - DB_URL=mongodb://localhost@mongodb
-    # ports:
-    #   - "5000:2000"
-    #   - "444:443"
-
-  # web-app:
-  #   build:
-  #       context: .
-  #       dockerfile: packages/web-app/Dockerfile
-  #   ports:
-  #       - '4000:4200'
-
   mongodb:
     image: mongo:latest
     environment:

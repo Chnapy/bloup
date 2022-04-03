@@ -4,6 +4,7 @@
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
+    "esModuleInterop": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
@@ -16,5 +17,5 @@
     "paths": {
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [".yarn", "node_modules", "tmp"]
 }
