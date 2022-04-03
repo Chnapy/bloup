@@ -1,8 +1,0 @@
-{
-  "version": 2,
-  "projects": {
-    "hello-tsc": "packages/hello-tsc",
-    "web-app": "packages/web-app",
-    "web-app-e2e": "packages/web-app-e2e"
-  }
-}

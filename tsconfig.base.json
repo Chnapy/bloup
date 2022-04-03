@@ -1,7 +1,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "rootDir": ".",
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
@@ -15,7 +14,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@bloup/hello-tsc": ["packages/hello-tsc/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
