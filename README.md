@@ -11,6 +11,8 @@ This is a sandbox repo to try some techs and ways of doing
 - CI cover and optimization
 - Docker dev environment (including Windows)
 
+[Nx framework](https://nx.dev/) was also tried. Powerful but quite restrictive and not compatible with Yarn 2+.
+
 ## Dev environment
 
 This repo is made to be used with [VSCode Remote-Containers](https://code.visualstudio.com/docs/remote/containers) which setup a Docker container with a fully controlled dev environment (including database and VSCode itself, all in a Linux distro).
