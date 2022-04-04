@@ -9,6 +9,7 @@ This is a sandbox repo to try some techs and ways of doing
 - Yarn 3 monorepo
 - Yarn Zero-installs
 - CI cover and optimization
+- CD optimization using Docker
 - Docker dev environment (including Windows)
 
 [Nx framework](https://nx.dev/) was also tried. Powerful but quite restrictive and not compatible with Yarn 2+.
