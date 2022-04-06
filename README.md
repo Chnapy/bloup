@@ -1,8 +1,9 @@
-
-
 # Bloup
 
+[![Open in Remote - Containers](https://img.shields.io/static/v1?label=Remote%20-%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/Chnapy/bloup)
+
 This is a sandbox repo to try some techs and ways of doing
+
 - NestJS with mongoDB, TypeORM and GraphQL - all linked and automatized as much as possible
 - Strong linking between frontend<->backend using GraphQL
 - GraphQL strong tooling (editor validation, editor operations, editor lint, code generation, api playground)
