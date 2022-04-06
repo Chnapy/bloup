@@ -1,5 +1,5 @@
 query UserQuery {
-    users {
-      exampleField
-    }
+  users {
+    exampleField
+  }
 }

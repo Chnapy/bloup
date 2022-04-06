@@ -1,8 +1,14 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "composite": true,
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "checkJs": true,
     "sourceMap": true,
-    "declaration": false,
+    "declaration": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
     "emitDecoratorMetadata": true,
@@ -12,10 +18,7 @@
     "module": "esnext",
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
-    "baseUrl": ".",
-    "paths": {
-    }
+    "skipDefaultLibCheck": true
   },
-  "exclude": [".yarn", "node_modules", "tmp"]
+  "exclude": ["**/.yarn", "**/node_modules", "**/dist"]
 }

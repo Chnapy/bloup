@@ -1,14 +1,17 @@
 import styled from '@emotion/styled';
 
 import { Route, Link } from 'react-router-dom';
+import { toto } from '@bloup/ui';
 
 const StyledApp = styled.div`
   // Your style here
+  color: red;
 `;
 
 export function App() {
   return (
     <StyledApp>
+      toto: {toto}
       {/* START: routes */}
       {/* These routes and navigation have been generated for you */}
       {/* Feel free to move and update them to fit your needs */}
