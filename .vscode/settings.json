@@ -9,6 +9,7 @@
   "eslint.nodePath": ".yarn/sdks",
   "editor.formatOnSave": true,
   "remote.extensionKind": {
-    "k--kato.intellij-idea-keybindings": ["ui", "workspace"]
+    "k--kato.intellij-idea-keybindings": ["ui", "workspace"],
+    "eamodio.gitlens": ["ui", "workspace"]
   }
 }
