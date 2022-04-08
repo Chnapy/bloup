@@ -2,7 +2,7 @@
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.231.3/containers/docker-existing-docker-compose
 // If you want to run as a non-root user in the container, see .devcontainer/docker-compose.yml.
 {
-  "name": "Existing Docker Compose (Extend)",
+  "name": "Bloup monorepo - dev container",
 
   // Update the 'dockerComposeFile' list if you have more compose files or use different names.
   // The .devcontainer/docker-compose.yml file contains any overrides you need/want to make.
@@ -30,7 +30,8 @@
     "firsttris.vscode-jest-runner",
     "styled-components.vscode-styled-components",
     "GraphQL.vscode-graphql",
-    "ms-azuretools.vscode-docker"
+    "ms-azuretools.vscode-docker",
+    "donjayamanne.git-extension-pack"
   ],
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
