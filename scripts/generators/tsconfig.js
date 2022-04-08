@@ -90,8 +90,12 @@ tsPkgs.forEach(({ dir, deps }) => {
           ...existingTsConfig.compilerOptions,
           outDir: './dist',
           rootDir: './src',
+          tsBuildInfoFile: './node_modules/.cache/.tsbuildinfo',
         },
-        include: uniqueArray(['./src/**/*', ...(existingTsConfig.include ?? [])]),
+        include: uniqueArray([
+          './src/**/*',
+          ...(existingTsConfig.include ?? []),
+        ]),
         references,
       },
       null,

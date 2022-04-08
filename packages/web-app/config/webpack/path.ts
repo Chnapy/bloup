@@ -1,6 +1,7 @@
-import { realpathSync } from 'fs';
-import { resolve } from 'path';
+import { realpathSync } from 'node:fs';
+import { resolve } from 'node:path';
 
 const appDirectory = realpathSync(process.cwd());
 
-export default (...pathSegments: string[]): string => resolve(appDirectory, ...pathSegments);
+export const resolvePath = (...pathSegments: string[]): string =>
+  resolve(appDirectory, ...pathSegments);

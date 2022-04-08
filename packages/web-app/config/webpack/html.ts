@@ -36,7 +36,7 @@ const defaultBody = `
 </div>
 `;
 
-export interface HtmlProps {
+export type HtmlProps = {
   htmlAttributes?: string;
   title?: string;
   meta?: string;
@@ -47,9 +47,9 @@ export interface HtmlProps {
   body?: string;
   noscript?: string;
   script?: string;
-}
+};
 
-const html = (props: HtmlProps = {}): string => {
+export const html = (props: HtmlProps = {}): string => {
   const {
     htmlAttributes = defaultHtmlAttributes,
     title = defaultTitle,
@@ -81,5 +81,3 @@ const html = (props: HtmlProps = {}): string => {
   </html>
   `;
 };
-
-export default html;

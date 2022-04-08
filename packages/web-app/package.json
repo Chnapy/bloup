@@ -5,8 +5,10 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "webpack serve --open",
-    "build": "webpack --mode production"
+    "dev": "webpack serve --open",
+    "build": "webpack --mode production",
+    "c:type": "tsc -b",
+    "c:lint": "eslint . --cache --cache-location node_modules/.cache/.eslintcache --fix"
   },
   "devDependencies": {
     "@babel/core": "7.17.8",

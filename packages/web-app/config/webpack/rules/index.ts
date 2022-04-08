@@ -10,7 +10,7 @@ import {
   images,
 } from './rules';
 
-const rules: RuleSetRule[] = [
+export const rules: RuleSetRule[] = [
   js,
   //   ts,
   scss,
@@ -19,5 +19,3 @@ const rules: RuleSetRule[] = [
   fonts,
   images,
 ];
-
-export default rules;

@@ -4,10 +4,11 @@
     "jsx": "react-jsx",
     "jsxImportSource": "@emotion/react",
     "outDir": "./dist",
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "tsBuildInfoFile": "./node_modules/.cache/.tsbuildinfo"
   },
   "files": [],
-  "include": ["./src/**/*"],
+  "include": ["./src/**/*", "./config/**/*"],
   "references": [
     {
       "path": "../bloup-ui"

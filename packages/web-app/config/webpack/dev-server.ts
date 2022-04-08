@@ -1,6 +1,6 @@
 import type { Configuration } from 'webpack-dev-server';
 
-import resolvePath from './path';
+import { resolvePath } from './path';
 
 const devServer: Configuration = {
   port: 8000,
@@ -12,4 +12,4 @@ const devServer: Configuration = {
   },
 };
 
-export default devServer;
+export { devServer };

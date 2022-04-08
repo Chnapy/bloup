@@ -4,8 +4,11 @@
   "compilerOptions": {
     "strictPropertyInitialization": false,
     "outDir": "./dist",
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "tsBuildInfoFile": "./node_modules/.cache/.tsbuildinfo"
   },
-  "include": ["./src/**/*"],
+  "include": [
+    "./src/**/*"
+  ],
   "references": []
 }

@@ -1,5 +1,4 @@
 import type { RuleSetRule } from 'webpack';
-import { isProduction } from '../devtools';
 
 export const postcss: RuleSetRule = {
   loader: 'postcss-loader',
