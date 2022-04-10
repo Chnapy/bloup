@@ -31,6 +31,7 @@ const extensions = [
 ];
 
 const alias = {
+  'react-dom/client': require.resolve('react-dom/client'),
   'react-dom': require.resolve('react-dom'),
 };
 
