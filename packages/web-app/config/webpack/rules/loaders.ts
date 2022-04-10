@@ -1,4 +1,5 @@
 import type { RuleSetRule } from 'webpack';
+import { isDevelopment } from '../devtools';
 
 export const postcss: RuleSetRule = {
   loader: 'postcss-loader',
@@ -41,12 +42,11 @@ export const babel: RuleSetRule = {
   options: {
     cacheDirectory: true,
     rootMode: 'upward',
+    // plugins: [isDevelopment && require.resolve('react-refresh/babel')].filter(
+    //   Boolean
+    // ),
   },
 };
-
-// export const typescript: RuleSetRule = {
-//   loader: 'ts-loader',
-// };
 
 export const file = (path: string): RuleSetRule => ({
   loader: 'file-loader',

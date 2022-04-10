@@ -3,7 +3,6 @@
  */
 const restrictedGlobalList = [
   'global',
-  'globalThis',
   'window',
   'localStorage',
   'postMessage',
@@ -211,7 +210,7 @@ module.exports = {
     'no-console': ['error', { allow: ['error', 'warn'] }],
     'no-continue': ['error'],
     'no-else-return': ['error'],
-    'no-empty-function': ['error'],
+    'no-empty-function': ['error', { allow: ['constructors'] }],
     'no-eval': ['error'],
     'no-floating-decimal': ['error'],
     'no-implied-eval': ['error'],
