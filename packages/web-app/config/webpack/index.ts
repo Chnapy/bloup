@@ -31,21 +31,14 @@ const extensions = [
 ];
 
 const alias = {
-  //   '@babel/runtime': require.resolve('@babel/runtime'),
   'react-dom': require.resolve('react-dom'),
-  // 'react-dom/client': require.resolve('react-dom/client'),
 };
 
 const config: Configuration = {
   resolve: { extensions, alias },
   mode: isProduction ? 'production' : 'development',
   target: isProduction ? 'browserslist' : 'web',
-  entry: [
-    'webpack-dev-server/client?http://localhost:8000', // WebpackDevServer host and port
-    'webpack/hot/only-dev-server',
-    '@babel/polyfill',
-    resolvePath('src/index.tsx'),
-  ],
+  entry: ['@babel/polyfill', resolvePath('src/index.tsx')],
   output: {
     filename: '[name].[contenthash].js',
     path: resolvePath('dist'),

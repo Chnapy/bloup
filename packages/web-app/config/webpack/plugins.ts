@@ -1,8 +1,4 @@
-import {
-  LoaderOptionsPlugin,
-  WebpackPluginInstance,
-  HotModuleReplacementPlugin,
-} from 'webpack';
+import { LoaderOptionsPlugin, WebpackPluginInstance } from 'webpack';
 
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
@@ -33,7 +29,6 @@ export const plugins: WebpackPluginInstance[] = [
     minimize: isProduction,
     debug: !isProduction,
   }),
-  // isDevelopment && new HotModuleReplacementPlugin(),
   isDevelopment && new ReactRefreshWebpackPlugin(),
   // TODO copy public folder on build
 ].filter(Boolean) as WebpackPluginInstance[];

@@ -8,7 +8,7 @@
     "tsBuildInfoFile": "./node_modules/.cache/.tsbuildinfo"
   },
   "files": [],
-  "include": ["./**/*"],
+  "include": ["./src/**/*"],
   "references": [
     {
       "path": "../bloup-ui"
@@ -18,6 +18,6 @@
     "compilerOptions": {
       "module": "CommonJS"
     },
-    "include": ["./**/*", "./webpack.config.ts", "config/webpack/**/*.ts"]
+    "include": ["./webpack.config.ts", "config/webpack/**/*.ts"]
   }
 }

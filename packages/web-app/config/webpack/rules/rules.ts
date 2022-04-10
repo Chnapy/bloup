@@ -1,7 +1,7 @@
 import { RuleSetRule } from 'webpack';
 
 // import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-
+import { isProduction } from '../devtools';
 import {
   postcss,
   css as cssLoader,
@@ -16,8 +16,6 @@ import {
 } from './loaders';
 
 const exclude = /node_modules/;
-
-const isProduction = process.env.NODE_ENV === 'production';
 
 export const js: RuleSetRule = {
   test: /\.[jt]sx?$/,
