@@ -4,5 +4,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "private": true,
-  "main": "./src/index.ts"
+  "main": "./src/index.ts",
+  "devDependencies": {
+    "@jest/types": "27.5.1"
+  }
 }

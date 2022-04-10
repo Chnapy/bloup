@@ -5,12 +5,6 @@ import { ProductStatesModule } from './product-states/product-states.module';
 import { UsersModule } from './users/users.module';
 
 @Module({
-  imports: [
-    DataModule,
-
-    UsersModule,
-    ProductsModule,
-    ProductStatesModule
-  ],
+  imports: [DataModule, UsersModule, ProductsModule, ProductStatesModule],
 })
 export class AppModule {}

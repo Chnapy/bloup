@@ -12,8 +12,8 @@ export class UsersService {
   findAll(): User[] {
     return [
       {
-        exampleField: 12
-      }
+        exampleField: 12,
+      },
     ];
   }
 

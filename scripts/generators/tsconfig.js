@@ -88,8 +88,8 @@ tsPkgs.forEach(({ dir, deps }) => {
         extends: '../../tsconfig.base.json',
         compilerOptions: {
           ...existingTsConfig.compilerOptions,
-          outDir: './dist',
           rootDir: './src',
+          outDir: './node_modules/.cache/dist',
           tsBuildInfoFile: './node_modules/.cache/.tsbuildinfo',
         },
         include: uniqueArray([

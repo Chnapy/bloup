@@ -19,7 +19,7 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
         entitiesDir: '../**/entities',
         migrationsDir: 'migrations',
         subscribersDir: 'subscribers',
-      }
+      },
     }),
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,

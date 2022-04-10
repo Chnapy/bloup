@@ -10,5 +10,6 @@
   "editor.formatOnSave": true,
   "remote.extensionKind": {
     "k--kato.intellij-idea-keybindings": ["ui", "workspace"]
-  }
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

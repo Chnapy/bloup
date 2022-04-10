@@ -10,7 +10,7 @@ const StyledApp = styled.div`
 
 export const App: React.FC = () => (
   <StyledApp>
-    toto: {toto}
+    toto: {toto} welcome web-app
     {/* START: routes */}
     {/* These routes and navigation have been generated for you */}
     {/* Feel free to move and update them to fit your needs */}

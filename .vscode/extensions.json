@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "ms-vscode-remote.vscode-remote-extensionpack",
+    "esbenp.prettier-vscode",
+    "arcanis.vscode-zipfs",
+    "dbaeumer.vscode-eslint",
+    "firsttris.vscode-jest-runner",
+    "styled-components.vscode-styled-components",
+    "GraphQL.vscode-graphql",
+    "ms-azuretools.vscode-docker",
+    "donjayamanne.git-extension-pack",
+    "EditorConfig.EditorConfig"
+  ]
+}
