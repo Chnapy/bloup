@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import { Route, Link } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import { toto } from '@bloup/ui';
 
 const StyledApp = styled.div`
@@ -27,25 +27,25 @@ export const App: React.FC = () => (
         </li>
       </ul>
     </div>
-    <Route
-      path="/"
-      exact
-      render={() => (
-        <div>
-          This is the generated root route.{' '}
-          <Link to="/page-2">Click here for page 2.</Link>
-        </div>
-      )}
-    />
-    <Route
-      path="/page-2"
-      exact
-      render={() => (
-        <div>
-          <Link to="/">Click here to go back to root page.</Link>
-        </div>
-      )}
-    />
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <div>
+            This is the generated root route.{' '}
+            <Link to="/page-2">Click here for page 2.</Link>
+          </div>
+        }
+      />
+      <Route
+        path="/page-2"
+        element={
+          <div>
+            <Link to="/">Click here to go back to root page.</Link>
+          </div>
+        }
+      />
+    </Routes>
     {/* END: routes */}
   </StyledApp>
 );

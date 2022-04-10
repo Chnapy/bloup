@@ -2,7 +2,7 @@
   "name": "@bloup/ui",
   "packageManager": "yarn@3.2.0",
   "version": "0.0.0",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "private": true,
   "main": "./src/index.ts",
   "devDependencies": {

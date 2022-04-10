@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
+import type { MongoConnectionOptions } from 'typeorm/driver/mongodb/MongoConnectionOptions';
 
 @Module({
   imports: [
@@ -20,7 +21,7 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
         migrationsDir: 'migrations',
         subscribersDir: 'subscribers',
       },
-    }),
+    } as MongoConnectionOptions),
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: 'schema.graphql',

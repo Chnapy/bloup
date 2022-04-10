@@ -2,7 +2,7 @@ import type { Configuration } from 'webpack-dev-server';
 
 import { resolvePath } from './path';
 
-const devServer: Configuration = {
+export const devServer: Configuration = {
   port: 8000,
   hot: true,
   historyApiFallback: true,
@@ -11,5 +11,3 @@ const devServer: Configuration = {
     directory: resolvePath('public'),
   },
 };
-
-export { devServer };

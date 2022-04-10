@@ -5,3 +5,10 @@
  */
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
+
+// if (process.env.NODE_ENV !== 'production') {
+//   (global as any).$RefreshReg$ = () => {};
+//   (global as any).$RefreshSig$ = () => () => {};
+//   (globalThis as any).$RefreshReg$ = () => {};
+//   (globalThis as any).$RefreshSig$ = () => () => {};
+// }
