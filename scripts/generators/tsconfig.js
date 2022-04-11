@@ -117,7 +117,11 @@ fs.writeFileSync(
       //     tsPkgs.map(({ name, relative }) => [name, [`${relative}/src`]])
       //   ),
       // },
-      include: ['scripts/**/*.js'],
+      compilerOptions: {
+        noEmit: true,
+        tsBuildInfoFile: './node_modules/.cache/.tsbuildinfo',
+      },
+      include: ['*.js', 'scripts/**/*.js'],
       references: tsPkgs.map(({ dir }) => ({
         path: path.relative(root, dir),
       })),

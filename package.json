@@ -19,7 +19,7 @@
     "c:test:ci": "jest $INIT_CWD --passWithNoTests --ci -i",
     "c:test:watch": "jest $INIT_CWD --cache --passWithNoTests --watch",
     "c:type": "cd $INIT_CWD && tsc -b",
-    "gen:tsconfig": "yarn node scripts/generators/tsconfig.js"
+    "gen:tsconfig": "yarn node scripts/generators/tsconfig.js && prettier -w **/tsconfig.json"
   },
   "devDependencies": {
     "@babel/core": "7.17.9",
