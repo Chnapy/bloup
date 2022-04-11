@@ -1,12 +1,23 @@
 {
   "name": "web-app",
-  "packageManager": "yarn@3.2.0",
   "version": "0.0.0",
-  "license": "UNLICENSED",
   "private": true,
+  "packageManager": "yarn@3.2.0",
+  "license": "UNLICENSED",
   "scripts": {
-    "dev": "NODE_ENV=development webpack serve",
-    "build": "NODE_ENV=production webpack"
+    "build": "NODE_ENV=production webpack",
+    "dev": "NODE_ENV=development webpack serve"
+  },
+  "dependencies": {
+    "@babel/runtime": "7.17.9",
+    "@bloup/ui": "workspace:*",
+    "@emotion/react": "11.9.0",
+    "@emotion/styled": "11.8.1",
+    "core-js": "3.21.1",
+    "react": "18.0.0",
+    "react-dom": "18.0.0",
+    "react-router-dom": "6.3.0",
+    "regenerator-runtime": "0.13.9"
   },
   "devDependencies": {
     "@babel/core": "7.17.9",
@@ -42,16 +53,5 @@
     "webpack": "5.72.0",
     "webpack-cli": "4.9.2",
     "webpack-dev-server": "4.8.1"
-  },
-  "dependencies": {
-    "@babel/runtime": "7.17.9",
-    "@bloup/ui": "workspace:*",
-    "@emotion/react": "11.9.0",
-    "@emotion/styled": "11.8.1",
-    "core-js": "3.21.1",
-    "react": "18.0.0",
-    "react-dom": "18.0.0",
-    "react-router-dom": "6.3.0",
-    "regenerator-runtime": "0.13.9"
   }
 }

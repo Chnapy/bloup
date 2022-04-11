@@ -1,12 +1,25 @@
 {
   "name": "api",
-  "packageManager": "yarn@3.2.0",
   "version": "0.0.0",
-  "license": "UNLICENSED",
   "private": true,
+  "packageManager": "yarn@3.2.0",
+  "license": "UNLICENSED",
   "scripts": {
     "dev": "nest start --watch",
     "nest": "nest"
+  },
+  "dependencies": {
+    "@nestjs/apollo": "10.0.8",
+    "@nestjs/common": "8.4.4",
+    "@nestjs/core": "8.4.4",
+    "@nestjs/graphql": "10.0.8",
+    "@nestjs/platform-express": "8.4.4",
+    "@nestjs/typeorm": "8.0.3",
+    "apollo-server-express": "3.6.7",
+    "graphql": "16.3.0",
+    "graphql-tools": "8.2.5",
+    "mongodb": "4.5.0",
+    "typeorm": "0.3.5"
   },
   "devDependencies": {
     "@babel/plugin-proposal-decorators": "7.17.9",
@@ -22,18 +35,5 @@
     "source-map-support": "0.5.21",
     "tslib": "2.3.1",
     "typescript": "4.6.3"
-  },
-  "dependencies": {
-    "@nestjs/apollo": "10.0.8",
-    "@nestjs/common": "8.4.4",
-    "@nestjs/core": "8.4.4",
-    "@nestjs/graphql": "10.0.8",
-    "@nestjs/platform-express": "8.4.4",
-    "@nestjs/typeorm": "8.0.3",
-    "apollo-server-express": "3.6.7",
-    "graphql": "16.3.0",
-    "graphql-tools": "8.2.5",
-    "mongodb": "4.5.0",
-    "typeorm": "0.3.5"
   }
 }
