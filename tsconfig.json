@@ -2,9 +2,10 @@
 {
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "noEmit": true
+    "noEmit": true,
+    "tsBuildInfoFile": "./node_modules/.cache/.tsbuildinfo"
   },
-  "include": ["*", "scripts/**/*.js"],
+  "include": ["*.js", "scripts/**/*.js"],
   "references": [
     {
       "path": "packages/api"
