@@ -8,9 +8,9 @@
     "packages/*"
   ],
   "scripts": {
-    "c:format": "cd $INIT_CWD && prettier -w .",
-    "c:lint": "cd $INIT_CWD && eslint . --cache --cache-location node_modules/.cache/.eslintcache --fix",
-    "c:lint:ci": "cd $INIT_CWD && eslint .",
+    "c:format": "prettier -w $INIT_CWD",
+    "c:lint": "eslint $INIT_CWD --cache --cache-location node_modules/.cache/.eslintcache --fix",
+    "c:lint:ci": "eslint $INIT_CWD",
     "c:pkg:deps": "syncpack syncpack lint-semver-ranges",
     "c:pkg:deps:fix": "syncpack fix-mismatches",
     "c:pkg:fix": "yarn c:pkg:deps:fix && yarn c:pkg:format",
@@ -19,7 +19,7 @@
     "c:test:ci": "jest $INIT_CWD --passWithNoTests --ci -i",
     "c:test:watch": "jest $INIT_CWD --cache --passWithNoTests --watch",
     "c:type": "cd $INIT_CWD && tsc -b",
-    "gen:tsconfig": "yarn node scripts/generators/tsconfig.js && prettier -w **/tsconfig.json"
+    "gen:tsconfig": "yarn node ${PROJECT_CWD}/scripts/generators/tsconfig.js && prettier -w ${PROJECT_CWD}/**/tsconfig.json"
   },
   "devDependencies": {
     "@babel/core": "7.17.9",

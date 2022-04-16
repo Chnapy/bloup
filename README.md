@@ -24,9 +24,50 @@ This repo is made to be used with [VSCode Remote-Containers](https://code.visual
 
 On Windows it is recommended to use [Windows WSL with Docker](https://docs.docker.com/desktop/windows/wsl/#develop-with-docker-and-wsl-2) which allow to work on an optimized Linux VM. Using VSCode Remote-Containers with them gives the best dev experience in this OS.
 
+## Monorepo architecture
+
+This repo follows a monorepo architecture using Yarn 3 with its [workspace feature](https://yarnpkg.com/features/workspaces).
+
+- Every packages are in `packages` folder.
+- Tooling is shared between every packages, and can be used globally on the whole repo.
+- Each package is independent, but same dependencies should use the same version for consistency reasons.
+
+### Run yarn command on specific package
+
+To target a specific package simply use `yarn workspace <pkg_name>`:
+
+- `yarn workspace web-app add -D typescript`
+- `yarn workspace web-app c:lint`
+- `yarn workspace web-app c:test`
+
+Note that [shared scripts](https://yarnpkg.com/getting-started/qa/#how-to-share-scripts-between-workspaces) should contains `:` in there names.
+
+## Generators & formatters
+
+Some tools are used to ensure files format and generated content.
+You can use them with these yarn commands:
+
+- `gen:tsconfig` - Generate all the `tsconfig.json` files with default values and packages references.
+  You should run it after add/remove a package.
+- `c:pkg:fix` - Format every `package.json` files and fix as possible dependencies versions to avoid multiple versions for a single one.
+- `c:lint` - ESLint in fix mode
+- `c:format` - Prettier in fix mode
+
 ## Zero-installs principe
 
 For stability & speed concerns, this repo follows the ["Zero Installs" principe proposed by Yarn](https://yarnpkg.com/features/zero-installs).
 
 It is why dependencies are versionned ([.yarn/cache](.yarn/cache)).
 So in theory there is no need to do any `yarn install` anymore.
+
+## CI
+
+Github Actions CI runs these jobs to ensure as possible PR quality:
+
+- check packages versions and possible duplicates
+- check lint
+- check tests
+- check TS typing
+
+All these jobs are done on the whole repo for processing time reason.
+Github Actions free offer may be limited for big projects, running one check on all the code instead of a check on each package takes way less time to run.
