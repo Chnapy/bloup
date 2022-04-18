@@ -108,3 +108,39 @@ jobs:
           docker tag web registry.heroku.com/bloup-app/web
           docker push registry.heroku.com/bloup-app/web
           heroku container:release -a bloup-app web
+
+  build-web-app:
+    name: Build web-app + Deploy
+    needs:
+      - check-packages
+      - check-lint
+      - check-test
+      - check-type
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build web-app
+        run: yarn workspace web-app build
+
+      - name: Deploy to Vercel (preview)
+        uses: amondnet/vercel-action@v20
+        id: now-deployment-PR
+        if: github.event_name == 'pull_request'
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_WEB_APP_ID }}
+
+      - name: Deploy to Vercel (staging)
+        uses: amondnet/vercel-action@v20
+        id: now-deployment-staging
+        if: contains(github.ref, 'master')
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_WEB_APP_ID }}
+          vercel-args: '--prod'
