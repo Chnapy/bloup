@@ -139,7 +139,7 @@ jobs:
         id: now-deployment-staging
         if: contains(github.ref, 'master')
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-comment: false
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_WEB_APP_ID }}

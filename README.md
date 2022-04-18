@@ -80,4 +80,7 @@ Github Actions free offer may be limited for big projects, running one check on 
 
 Following continuous deployment goal, after CI checks are done on `master` a deployment is made to staging environments.
 
-- Heroku for NodeJS apps: https://bloup-app.herokuapp.com/graphql
+- Heroku for `api`: https://bloup-app.herokuapp.com/graphql
+- Vercel for `web-app`: https://bloup-staging.vercel.app
+
+Some "preview" deploys may be done on PR. Access to them are showed with PR comments if CI succeed.
