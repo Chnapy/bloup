@@ -4,15 +4,19 @@
 
 This is a sandbox repo to try some techs and ways of doing
 
-- NestJS with mongoDB, TypeORM and GraphQL - all linked and automatized as much as possible
-- React 18
-- Strong linking between frontend<->backend using GraphQL
-- GraphQL strong tooling (editor validation, editor operations, editor lint, code generation, api playground)
-- Yarn 3 monorepo
-- Yarn Zero-installs
-- CI cover and optimization
-- CD optimization using Docker
-- Docker dev environment (including Windows)
+- Dev
+  - NestJS with mongoDB, TypeORM and GraphQL - all linked and automatized as much as possible
+  - React 18
+- Tools & config
+  - Yarn 3 monorepo
+  - Yarn Zero-installs
+  - Strong linking between frontend<->backend using GraphQL
+  - GraphQL strong tooling (editor validation, editor operations, editor lint, code generation, api playground)
+- Devops
+  - CI cover and optimization
+  - CD optimization using Docker
+  - PR preview environment
+  - Docker dev environment (including Windows)
 
 [Nx framework](https://nx.dev/) was also tried. Powerful but quite restrictive and not compatible with Yarn 2+.
 
@@ -71,3 +75,9 @@ Github Actions CI runs these jobs to ensure as possible PR quality:
 
 All these jobs are done on the whole repo for processing time reason.
 Github Actions free offer may be limited for big projects, running one check on all the code instead of a check on each package takes way less time to run.
+
+### CD
+
+Following continuous deployment goal, after CI checks are done on `master` a deployment is made to staging environments.
+
+- Heroku for NodeJS apps: https://bloup-app.herokuapp.com/graphql
