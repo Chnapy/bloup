@@ -1,0 +1,31 @@
+FROM node:16 as builder
+
+RUN mkdir -p /usr/src/app
+RUN chown -R node:node /usr/src/app
+
+USER node
+
+WORKDIR /usr/src/app
+
+COPY --chown=node:node . ./
+
+ENV NODE_ENV=staging
+
+RUN yarn workspace api build
+
+# ---
+
+FROM node:16
+WORKDIR /usr/src/app
+
+USER node
+
+COPY --from=builder --chown=node:node /usr/src/app/package.json ./
+COPY --from=builder --chown=node:node /usr/src/app/yarn.lock ./
+COPY --from=builder --chown=node:node /usr/src/app/.yarn ./.yarn
+COPY --from=builder --chown=node:node /usr/src/app/.yarnrc* ./
+COPY --from=builder --chown=node:node /usr/src/app/.pnp.* ./
+COPY --from=builder --chown=node:node /usr/src/app/packages/api/package.json ./packages/api/
+COPY --from=builder --chown=node:node /usr/src/app/packages/api/dist ./packages/api/dist/
+
+CMD yarn node packages/api/dist/main

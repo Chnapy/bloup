@@ -19,6 +19,10 @@
   // connected. This is typically a file mount in .devcontainer/docker-compose.yml
   "workspaceFolder": "/workspace",
 
+  "features": {
+    "docker-from-docker": "latest"
+  },
+
   // Set *default* container specific settings.json values on container create.
   "settings": {},
 

@@ -1,0 +1,30 @@
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Versioning and metadata
+.git
+.git*
+.dockerignore
+
+# Environment
+.env
+.env.dev
+.env.test
+
+# Files not required for production
+.editorconfig
+.eslint*
+.graphql*
+.prettier*
+jest.*
+Dockerfile*
+*.md
+
+# cache
+# .yarn/cache
+# .yarn/unplugged
+# .yarn/install-state.gz
+# **/node_modules/.cache/

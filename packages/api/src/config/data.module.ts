@@ -4,15 +4,13 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import type { MongoConnectionOptions } from 'typeorm/driver/mongodb/MongoConnectionOptions';
 
+const isDev = process.env.NODE_ENV === 'development';
+
 @Module({
   imports: [
     TypeOrmModule.forRoot({
+      url: process.env.DB_URL,
       type: 'mongodb',
-      host: 'localhost',
-      port: 27017,
-      // username: 'root',
-      // password: 'root',
-      database: 'bloup',
       entities: ['../**/*.entity.js'],
       autoLoadEntities: true,
       synchronize: true,
@@ -24,7 +22,7 @@ import type { MongoConnectionOptions } from 'typeorm/driver/mongodb/MongoConnect
     } as MongoConnectionOptions),
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
-      autoSchemaFile: 'schema.graphql',
+      autoSchemaFile: isDev ? 'schema.graphql' : true,
     }),
   ],
 })

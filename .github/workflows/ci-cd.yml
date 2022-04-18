@@ -1,4 +1,4 @@
-name: CI checks
+name: CI - CD
 
 on:
   push:
@@ -15,9 +15,6 @@ jobs:
         name: Checkout [master]
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '16'
 
   pr:
     runs-on: ubuntu-latest
@@ -27,9 +24,6 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '16'
 
   check-packages:
     name: Check - Packages
@@ -89,3 +83,28 @@ jobs:
 
       - name: Check - Type
         run: yarn c:type
+
+  build-api:
+    name: Build api + Deploy if master - staging
+    needs:
+      - check-packages
+      - check-lint
+      - check-test
+      - check-type
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build image
+        run: docker build -f packages/api/environment/staging/Dockerfile.web -t web .
+
+      - name: Push & release image to Heroku staging
+        if: contains(github.ref, 'master')
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        run: |
+          docker login --username=${{ secrets.HEROKU_EMAIL }} --password=${{ secrets.HEROKU_API_KEY }} registry.heroku.com
+          docker tag web registry.heroku.com/bloup-app/web
+          docker push registry.heroku.com/bloup-app/web
+          heroku container:release -a bloup-app web
