@@ -1,23 +1,27 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "jsx": "react-jsx",
     "jsxImportSource": "@emotion/react",
     "outDir": "./node_modules/.cache/dist",
     "rootDir": "./src",
-    "tsBuildInfoFile": "./node_modules/.cache/.tsbuildinfo"
+    "tsBuildInfoFile": "./node_modules/.cache/.tsbuildinfo",
+
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "skipLibCheck": true,
+    "esModuleInterop": false,
+    "module": "ESNext",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx"
   },
   "files": [],
   "include": ["./src/**/*"],
   "references": [
+    { "path": "./tsconfig.node.json" },
     {
       "path": "../bloup-ui"
     }
-  ],
-  "ts-node": {
-    "compilerOptions": {
-      "module": "CommonJS"
-    },
-    "include": ["./webpack.config.ts", "config/webpack/**/*.ts"]
-  }
+  ]
 }
