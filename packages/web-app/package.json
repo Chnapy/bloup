@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@babel/runtime": "7.17.9",
     "@bloup/ui": "workspace:*",
     "@emotion/react": "11.9.0",
     "@emotion/styled": "11.8.1",
@@ -21,11 +20,6 @@
     "regenerator-runtime": "0.13.9"
   },
   "devDependencies": {
-    "@babel/core": "7.17.9",
-    "@babel/plugin-transform-runtime": "7.17.0",
-    "@babel/polyfill": "7.12.1",
-    "@babel/preset-react": "7.16.7",
-    "@emotion/babel-plugin": "11.9.2",
     "@testing-library/react": "13.0.0",
     "@testing-library/react-hooks": "8.0.0",
     "@types/node": "17.0.23",
