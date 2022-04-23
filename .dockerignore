@@ -19,7 +19,6 @@ yarn-error.log*
 .eslint*
 .graphql*
 .prettier*
-jest.*
 Dockerfile*
 *.md
 

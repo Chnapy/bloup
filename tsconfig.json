@@ -5,7 +5,7 @@
     "noEmit": true,
     "tsBuildInfoFile": "./node_modules/.cache/.tsbuildinfo"
   },
-  "include": ["*.js", "scripts/**/*.js"],
+  "include": ["*.ts", "*.js", "scripts/**/*.js"],
   "references": [
     {
       "path": "packages/api"

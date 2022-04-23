@@ -8,5 +8,5 @@
     "tsBuildInfoFile": "./node_modules/.cache/.tsbuildinfo"
   },
   "include": ["./src/**/*"],
-  "references": []
+  "references": [{ "path": "./tsconfig.node.json" }]
 }
