@@ -58,10 +58,14 @@ You can use them with these yarn commands:
 - `c:lint` - ESLint in fix mode
 - `c:format` - Prettier in fix mode
 
-## Esbuild
+## Esbuild & Vite
 
 App `web-app` uses [Vite](https://github.com/vitejs/vite) build tool instead of common Webpack.
 Vite uses [esbuild](https://github.com/evanw/esbuild) which is a non-JS builder allowing big performance improvement, and trivial config.
+
+### Vitest
+
+Like with Vite, [Vitest](https://github.com/vitest-dev/vitest) is a esbuild-based fast testing tool. It's used for the whole repo.
 
 ## Zero-installs principe
 
