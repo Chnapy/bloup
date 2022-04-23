@@ -6,6 +6,6 @@
   "license": "UNLICENSED",
   "main": "./src/index.ts",
   "devDependencies": {
-    "@jest/types": "27.5.1"
+    "vitest": "0.9.4"
   }
 }
