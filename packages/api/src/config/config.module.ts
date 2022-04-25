@@ -15,7 +15,7 @@ const nodeEnv = joi
   .default('development')
   .validate(process.env.NODE_ENV).value as keyof typeof envFileNames;
 
-Logger.log('NODE_ENV', nodeEnv);
+Logger.log(`NODE_ENV=${nodeEnv}`, 'env');
 
 @Module({
   imports: [

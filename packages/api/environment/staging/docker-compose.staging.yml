@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  build:
+    image: ghcr.io/chnapy/bloup/api-staging
+    container_name: bloup.api-staging.main
+    environment:
+      - NODE_ENV=staging
+      - PORT=3333
+      - DB_URL=mongodb://mongodb/bloup-staging
+    build:
+      context: ../../../..
+      dockerfile: packages/api/environment/staging/Dockerfile.staging
+    ports:
+      - '80:3333'
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:latest
+    container_name: bloup.api-staging.mongodb
+    environment:
+      - MONGODB_DATABASE="bloup-staging"
+    ports:
+      - '37017:27017'
+    volumes:
+      - mongodb:/data/db
+      - mongodb_config:/data/configdb
+
+volumes:
+  mongodb:
+  mongodb_config:
