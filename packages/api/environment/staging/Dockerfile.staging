@@ -28,4 +28,8 @@ COPY --from=builder --chown=node:node /usr/src/app/.pnp.* ./
 COPY --from=builder --chown=node:node /usr/src/app/packages/api/package.json ./packages/api/
 COPY --from=builder --chown=node:node /usr/src/app/packages/api/dist ./packages/api/dist/
 
+LABEL org.opencontainers.image.source="https://github.com/chnapy/bloup"
+
+ENV NODE_ENV=staging
+
 CMD yarn node packages/api/dist/main
