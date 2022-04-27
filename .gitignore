@@ -48,6 +48,3 @@ Thumbs.db
 !.yarn/versions
 !.yarn/unplugged
 !.yarn/unplugged/**/node_modules
-
-.vercel
-auth.json

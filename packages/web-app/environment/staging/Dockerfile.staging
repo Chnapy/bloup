@@ -1,0 +1,19 @@
+FROM node:16 as builder
+
+RUN mkdir -p /usr/src/app
+RUN chown -R node:node /usr/src/app
+
+USER node
+
+WORKDIR /usr/src/app
+
+COPY --chown=node:node . ./
+
+RUN yarn workspace web-app build
+
+# ---
+
+FROM nginx:alpine
+WORKDIR /usr/src/app
+
+COPY --from=builder --chown=node:node /usr/src/app/packages/web-app/dist /usr/share/nginx/html

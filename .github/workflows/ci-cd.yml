@@ -129,35 +129,38 @@ jobs:
   build-web-app:
     name: Build web-app + Deploy
     needs:
-      - check-packages
-      - check-lint
-      - check-test
-      - check-type
+      - build-api
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v3
 
-      - name: Build web-app
-        run: yarn workspace web-app build
+      - name: Build image
+        run: docker compose -f packages/web-app/environment/staging/docker-compose.staging.yml build
 
-      - name: Deploy to Vercel (preview)
-        uses: amondnet/vercel-action@v20
-        id: now-deployment-PR
-        if: github.event_name == 'pull_request'
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_WEB_APP_ID }}
-
-      - name: Deploy to Vercel (staging)
-        uses: amondnet/vercel-action@v20
-        id: now-deployment-staging
+      - name: Push image to GitHub Container registry
         if: contains(github.ref, 'master')
+        run: |
+          echo "${{ secrets.CR_PAT }}" | docker login ghcr.io -u chnapy --password-stdin
+          docker compose -f packages/web-app/environment/staging/docker-compose.staging.yml push
+
+      - name: Copy docker-compose.yml file to remote server
+        if: contains(github.ref, 'master')
+        uses: appleboy/scp-action@master
         with:
-          github-comment: false
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_WEB_APP_ID }}
-          vercel-args: '--prod'
+          host: vps-0c88ff97.vps.ovh.net
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          source: 'packages/web-app/environment/staging/docker-compose.staging.yml'
+          target: 'staging/web-app'
+          strip_components: 4
+
+      - name: Update remote server container with latest image
+        if: contains(github.ref, 'master')
+        uses: appleboy/ssh-action@master
+        with:
+          host: vps-0c88ff97.vps.ovh.net
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            docker stack deploy --prune -c ./staging/web-app/docker-compose.staging.yml bloup-web-app-staging --with-registry-auth
