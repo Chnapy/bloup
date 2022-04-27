@@ -16,4 +16,6 @@ RUN yarn workspace web-app build
 FROM nginx:alpine
 WORKDIR /usr/src/app
 
+LABEL org.opencontainers.image.source https://github.com/chnapy/bloup
+
 COPY --from=builder --chown=node:node /usr/src/app/packages/web-app/dist /usr/share/nginx/html

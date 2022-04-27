@@ -8,8 +8,6 @@ services:
     build:
       context: ../../../..
       dockerfile: packages/web-app/environment/staging/Dockerfile.staging
-    labels:
-      - org.opencontainers.image.source=https://github.com/chnapy/bloup
     ports:
       - '80:80'
     deploy:
