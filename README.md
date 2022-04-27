@@ -82,15 +82,19 @@ Github Actions CI runs these jobs to ensure as possible PR quality:
 - check lint
 - check tests
 - check TS typing
+- build (on apps)
 
 All these jobs are done on the whole repo for processing time reason.
 Github Actions free offer may be limited for big projects, running one check on all the code instead of a check on each package takes way less time to run.
 
 ### CD
 
-Following continuous deployment goal, after CI checks are done on `master` a deployment is made to staging environments.
+Following continuous deployment goal, after CI checks are done on `master` a deployment is made to a Docker-based staging environment.
 
-- Heroku for `api`: https://bloup-app.herokuapp.com/graphql
-- Vercel for `web-app`: https://bloup-staging.vercel.app
+- `web-app`: http://vps-0c88ff97.vps.ovh.net
+- `api`: http://vps-0c88ff97.vps.ovh.net:3333/graphql
 
-Some "preview" deploys may be done on PR. Access to them are showed with PR comments if CI succeed.
+Docker is configured to use [swarm](https://docs.docker.com/engine/swarm/) allowing zero downtime, rolling update, load balancing etc.
+
+For each app, CI generates a Docker image which is pushed from `master` to GH Container Repository.
+Then a deploy is triggered on the server itself, which updates its image & container with latest pushed image.
