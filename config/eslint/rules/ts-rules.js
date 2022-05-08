@@ -24,6 +24,7 @@ module.exports = {
     '@typescript-eslint/no-unnecessary-condition': ['error'],
     '@typescript-eslint/no-unnecessary-type-arguments': ['error'],
     '@typescript-eslint/no-unused-vars': ['error', { args: 'none' }],
+    '@typescript-eslint/no-shadow': ['error'],
     '@typescript-eslint/non-nullable-type-assertion-style': ['error'],
     '@typescript-eslint/prefer-for-of': ['error'],
     '@typescript-eslint/prefer-includes': ['error'],

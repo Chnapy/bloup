@@ -16,8 +16,13 @@ This is a sandbox repo to try some techs and ways of doing
 - Devops
   - CI cover and optimization
   - CD optimization using Docker
-  - PR preview environment
   - Docker dev environment (including Windows)
+
+TODO
+
+- Devops
+  - App deploy on change only
+  - PR preview environment
 
 [Nx framework](https://nx.dev/) was also tried. Powerful but quite restrictive and not compatible with Yarn 2+.
 

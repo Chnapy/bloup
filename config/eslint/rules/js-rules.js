@@ -227,7 +227,6 @@ module.exports = {
     'no-proto': ['error'],
     'no-restricted-globals': ['error'].concat(restrictedGlobalList),
     'no-return-assign': ['error'],
-    'no-shadow': ['error'],
     'no-underscore-dangle': ['error', { allow: ['_id'] }],
     'no-unneeded-ternary': ['error'],
     'no-unused-expressions': ['error', { allowShortCircuit: true }],

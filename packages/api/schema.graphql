@@ -2,50 +2,35 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-type Product {
-  """Example field (placeholder)"""
+type User {
+  id: ID!
   exampleField: Int!
+  toto: Toto!
 }
 
-type User {
-  """Example field (placeholder)"""
-  exampleField: Int!
+enum Toto {
+  FOO
+  BAR
 }
 
 type Query {
   users: [User!]!
-  user(id: Int!): User!
-  products: [Product!]!
-  product(id: Int!): Product!
+  user(id: ID!): User!
 }
 
 type Mutation {
   createUser(createUserInput: CreateUserInput!): User!
   updateUser(updateUserInput: UpdateUserInput!): User!
-  removeUser(id: Int!): User!
-  createProduct(createProductInput: CreateProductInput!): Product!
-  updateProduct(updateProductInput: UpdateProductInput!): Product!
-  removeProduct(id: Int!): Product!
+  removeUser(id: ID!): User!
 }
 
 input CreateUserInput {
-  """Example field (placeholder)"""
   exampleField: Int!
+  toto: Toto!
 }
 
 input UpdateUserInput {
-  """Example field (placeholder)"""
   exampleField: Int
-  id: Int!
-}
-
-input CreateProductInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
-}
-
-input UpdateProductInput {
-  """Example field (placeholder)"""
-  exampleField: Int
+  toto: Toto
   id: Int!
 }

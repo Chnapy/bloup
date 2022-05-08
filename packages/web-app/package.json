@@ -5,15 +5,18 @@
   "packageManager": "yarn@3.2.0",
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "vite",
     "build": "vite build",
+    "dev": "vite",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@apollo/client": "*",
+    "@bloup/net": "workspace:*",
     "@bloup/ui": "workspace:*",
     "@emotion/react": "11.9.0",
     "@emotion/styled": "11.8.1",
     "core-js": "3.21.1",
+    "graphql": "*",
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-router-dom": "6.3.0",

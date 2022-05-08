@@ -5,10 +5,10 @@
   "packageManager": "yarn@3.2.0",
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "nest start --watch",
     "build": "nest build",
-    "start": "node dist/main",
-    "nest": "nest"
+    "dev": "nest start --watch",
+    "nest": "nest",
+    "start": "node dist/main"
   },
   "dependencies": {
     "@nestjs/apollo": "10.0.8",
@@ -19,7 +19,7 @@
     "@nestjs/platform-express": "8.4.4",
     "@nestjs/typeorm": "8.0.3",
     "apollo-server-express": "3.6.7",
-    "graphql": "16.3.0",
+    "graphql": "*",
     "graphql-tools": "8.2.5",
     "joi": "17.6.0",
     "mongodb": "4.5.0",

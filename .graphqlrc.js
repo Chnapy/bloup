@@ -4,20 +4,27 @@ const documents = [
   //  'src/graphql/**/*.graphql'
 ];
 
-const endpoints = {
-  default: {
-    url: 'http://localhost:3333/graphql',
-  },
-};
+// const endpoints = {
+//   default: {
+//     url: 'http://localhost:3333/graphql',
+//   },
+// };
 
 module.exports = {
   projects: {
     'web-app': {
       schema,
       documents,
-      extensions: {
-        endpoints,
-      },
+      // extensions: {
+      //   endpoints,
+      // },
+    },
+    net: {
+      schema,
+      documents,
+      // extensions: {
+      //   endpoints,
+      // },
     },
     api: {
       schema,
@@ -32,7 +39,7 @@ module.exports = {
         //         },
         //     },
         // ],
-        endpoints,
+        // endpoints,
       },
     },
   },

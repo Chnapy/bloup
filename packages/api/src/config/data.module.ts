@@ -19,6 +19,10 @@ const isDev = process.env.NODE_ENV === 'development';
         migrationsDir: 'migrations',
         subscribersDir: 'subscribers',
       },
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      keepConnectionAlive: true,
+      logging: true,
     } as MongoConnectionOptions),
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
