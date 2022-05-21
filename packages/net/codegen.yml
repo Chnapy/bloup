@@ -1,8 +1,13 @@
 schema: '../api/schema.graphql'
 documents: './src/graphql/**/*.graphql'
 generates:
-  ./src/graphql-operations.generated.ts:
+  ./src/types.generated.ts:
     plugins:
       - typescript
+  ./src/graphql-operations.generated.ts:
+    preset: import-types
+    presetConfig:
+      typesPath: ./types.generated
+    plugins:
       - typescript-operations
       - typed-document-node

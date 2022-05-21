@@ -1,7 +1,11 @@
 query UserList {
   users {
-    id
-    exampleField
-    toto
+    ...user
   }
+}
+
+fragment user on User {
+  id
+  exampleField
+  toto
 }
