@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { User } from './entities/user.entity';
 import { CreateUserInput } from './dto/create-user.input';
 import { UpdateUserInput } from './dto/update-user.input';
-import { Repository } from 'typeorm';
+import { FindOptionsWhere, Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 
 @Injectable()
@@ -22,6 +22,10 @@ export class UsersService {
 
   findOne(id: User['id']) {
     return this.usersRepository.findOneBy({ id });
+  }
+
+  findOneBy(where: FindOptionsWhere<User>) {
+    return this.usersRepository.findOneBy(where);
   }
 
   update(updateUserInput: UpdateUserInput) {

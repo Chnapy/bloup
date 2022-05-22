@@ -1,6 +1,6 @@
-import { Field, ID, Int, ObjectType } from '@nestjs/graphql';
+import { Field, ID, ObjectType } from '@nestjs/graphql';
 import { Column, Entity, ObjectIdColumn } from 'typeorm';
-import { Toto } from './enums/toto';
+import { OAuthProvider } from './enums/oauth-provider';
 
 @Entity()
 @ObjectType()
@@ -9,10 +9,18 @@ export class User {
   @ObjectIdColumn()
   id: string;
 
-  @Field(() => Int)
   @Column()
-  exampleField: number;
+  oauthProvider: OAuthProvider;
 
   @Column()
-  toto: Toto;
+  oauthId: string;
+
+  @Column()
+  email: string;
+
+  @Column()
+  name: string;
+
+  @Column()
+  picture?: string;
 }

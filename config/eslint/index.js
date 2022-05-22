@@ -83,6 +83,8 @@ module.exports = {
         'unicorn/prevent-abbreviations': 'off',
         'unicorn/prefer-module': 'off',
         'unicorn/numeric-separators-style': 'off',
+        'unicorn/no-null': 'off',
+        'unicorn/no-array-for-each': 'off',
       }),
     },
     {

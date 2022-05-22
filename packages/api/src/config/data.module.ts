@@ -1,10 +1,17 @@
-import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
+import { Module } from '@nestjs/common';
+import { GraphQLModule } from '@nestjs/graphql';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { ServerResponse } from 'node:http';
 import type { MongoConnectionOptions } from 'typeorm/driver/mongodb/MongoConnectionOptions';
+import { ExpressRequest } from '../auth/google.strategy';
 
 const isDev = process.env.NODE_ENV === 'development';
+
+export type GraphQLContext = {
+  req: ExpressRequest;
+  res: ServerResponse;
+};
 
 @Module({
   imports: [
@@ -27,6 +34,7 @@ const isDev = process.env.NODE_ENV === 'development';
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: isDev ? 'schema.graphql' : true,
+      context: ({ req, res }): GraphQLContext => ({ req, res }),
     }),
   ],
 })

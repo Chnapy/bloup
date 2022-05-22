@@ -202,7 +202,6 @@ module.exports = {
     'func-names': ['error', 'as-needed'],
     'func-style': ['error'],
     'id-length': ['error', { exceptions: ['_', 'i', 't', 'e'] }],
-    'max-params': ['error'],
     'no-alert': ['error'],
     'no-array-constructor': ['error'],
     'no-bitwise': ['error'],

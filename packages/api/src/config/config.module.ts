@@ -20,7 +20,7 @@ Logger.log(`NODE_ENV=${nodeEnv}`, 'env');
 @Module({
   imports: [
     ConfigModuleNest.forRoot({
-      envFilePath: envFileNames[nodeEnv],
+      envFilePath: [envFileNames[nodeEnv], '.env.local'],
       isGlobal: true,
       cache: true,
       expandVariables: true,

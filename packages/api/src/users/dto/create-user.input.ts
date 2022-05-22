@@ -1,10 +1,12 @@
-import { Field, InputType, Int } from '@nestjs/graphql';
+import { InputType } from '@nestjs/graphql';
+import { OAuthProvider } from '../entities/enums/oauth-provider';
 import { User } from '../entities/user.entity';
 
 @InputType()
-export class CreateUserInput {
-  @Field(() => Int)
-  exampleField: User['exampleField'];
-
-  toto: User['toto'];
+export class CreateUserInput implements Omit<User, 'id'> {
+  oauthProvider: OAuthProvider;
+  oauthId: string;
+  email: string;
+  name: string;
+  picture?: string;
 }
