@@ -6,4 +6,4 @@ node_modules/
 schema.graphql
 *.generated.ts
 
-**/src/plugin/index.js
+nm-packages/**/*
