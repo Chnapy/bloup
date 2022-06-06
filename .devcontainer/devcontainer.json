@@ -33,8 +33,7 @@
     "dbaeumer.vscode-eslint",
     "styled-components.vscode-styled-components",
     "GraphQL.vscode-graphql",
-    "ms-azuretools.vscode-docker",
-    "donjayamanne.git-extension-pack"
+    "ms-azuretools.vscode-docker"
   ],
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.

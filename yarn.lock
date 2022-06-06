@@ -62,9 +62,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@apollo/client@npm:*":
-  version: 3.6.3
-  resolution: "@apollo/client@npm:3.6.3"
+"@apollo/client@npm:3.6.6":
+  version: 3.6.6
+  resolution: "@apollo/client@npm:3.6.6"
   dependencies:
     "@graphql-typed-document-node/core": ^3.1.1
     "@wry/context": ^0.6.0
@@ -75,10 +75,9 @@ __metadata:
     optimism: ^0.16.1
     prop-types: ^15.7.2
     symbol-observable: ^4.0.0
-    ts-invariant: ^0.10.2
+    ts-invariant: ^0.10.3
     tslib: ^2.3.0
-    use-sync-external-store: ^1.0.0
-    zen-observable-ts: ^1.2.0
+    zen-observable-ts: ^1.2.5
   peerDependencies:
     graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
     graphql-ws: ^5.5.5
@@ -91,7 +90,7 @@ __metadata:
       optional: true
     subscriptions-transport-ws:
       optional: true
-  checksum: d1ccf3377ef5c629f605bea6216864266f2151f62ef95ea153f7887940609bab909f1265f7aca8b0f7fd8681a9aa3e8b9283db669513c499540d0387e4188bc2
+  checksum: 3cf430f406d3f4b5a316f36830a115452f27b7db47e1b7161725603e444332355e5a8fde992c3ec9268b44e8db8030e1ab021f965a186667eaa8af1d144c2beb
   languageName: node
   linkType: hard
 
@@ -1579,22 +1578,37 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@bloup/gqlt@workspace:packages/gqlt":
+  version: 0.0.0-use.local
+  resolution: "@bloup/gqlt@workspace:packages/gqlt"
+  dependencies:
+    "@apollo/client": 3.6.6
+    gql-ls: "portal:../../nm-packages/gql-ls"
+    graphql: 16.5.0
+    graphql-tag: 2.12.6
+    tslib: 2.4.0
+    vitest: 0.9.4
+  peerDependencies:
+    graphql: 16.5.0
+  languageName: unknown
+  linkType: soft
+
 "@bloup/net@workspace:*, @bloup/net@workspace:packages/net":
   version: 0.0.0-use.local
   resolution: "@bloup/net@workspace:packages/net"
   dependencies:
-    "@apollo/client": "*"
+    "@apollo/client": 3.6.6
     "@graphql-codegen/cli": 2.6.2
     "@graphql-codegen/import-types-preset": 2.1.18
     "@graphql-codegen/typed-document-node": 2.2.10
     "@graphql-codegen/typescript": 2.4.10
     "@graphql-codegen/typescript-operations": 2.3.7
     "@graphql-typed-document-node/core": 3.1.1
-    graphql: "*"
+    graphql: 16.5.0
     vitest: 0.9.4
   peerDependencies:
-    "@apollo/client": "*"
-    graphql: "*"
+    "@apollo/client": 3.6.6
+    graphql: 16.5.0
   languageName: unknown
   linkType: soft
 
@@ -1941,7 +1955,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-codegen/typescript@npm:2.4.10, @graphql-codegen/typescript@npm:^2.4.10":
+"@graphql-codegen/typescript@npm:2.4.10":
   version: 2.4.10
   resolution: "@graphql-codegen/typescript@npm:2.4.10"
   dependencies:
@@ -1953,6 +1967,21 @@ __metadata:
   peerDependencies:
     graphql: ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
   checksum: f491e9770185d7b8ed22ec3e2c6fca08d81f9518fd7154e2a7acc144f5df226d00f46cb03aaebac32a02a810eff0cd7480e47c968863d0edc42688db55d03173
+  languageName: node
+  linkType: hard
+
+"@graphql-codegen/typescript@npm:^2.4.10":
+  version: 2.4.11
+  resolution: "@graphql-codegen/typescript@npm:2.4.11"
+  dependencies:
+    "@graphql-codegen/plugin-helpers": ^2.4.0
+    "@graphql-codegen/schema-ast": ^2.4.1
+    "@graphql-codegen/visitor-plugin-common": 2.8.0
+    auto-bind: ~4.0.0
+    tslib: ~2.4.0
+  peerDependencies:
+    graphql: ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
+  checksum: 481b581ab8505434c4ed84648b225e9bc4a4dcde488179014539e2093dc4f8bb4ee20e2d8899b4ce457da3036eaa5886b7d71b3ddb6b9a115bb78457d273711c
   languageName: node
   linkType: hard
 
@@ -4074,7 +4103,7 @@ __metadata:
     "@types/passport-google-oauth20": 2.0.11
     apollo-server-express: 3.6.7
     babel-plugin-transform-typescript-metadata: 0.3.2
-    graphql: "*"
+    graphql: 16.5.0
     graphql-tools: 8.2.5
     joi: 17.6.0
     mongodb: 4.5.0
@@ -4083,7 +4112,7 @@ __metadata:
     reflect-metadata: 0.1.13
     rxjs: 7.5.5
     source-map-support: 0.5.21
-    tslib: 2.3.1
+    tslib: 2.4.0
     typeorm: 0.3.5
     typescript: 4.6.3
     vitest: 0.9.4
@@ -4510,6 +4539,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bindings@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "bindings@npm:1.5.0"
+  dependencies:
+    file-uri-to-path: 1.0.0
+  checksum: 65b6b48095717c2e6105a021a7da4ea435aa8d3d3cd085cb9e85bcb6e5773cf318c4745c3f7c504412855940b585bdf9b918236612a1c7a7942491de176f1ae7
+  languageName: node
+  linkType: hard
+
 "bl@npm:^4.1.0":
   version: 4.1.0
   resolution: "bl@npm:4.1.0"
@@ -4548,7 +4586,7 @@ __metadata:
     prettier: 2.6.2
     react: 18.0.0
     syncpack: 6.2.0
-    tslib: 2.3.1
+    tslib: 2.4.0
     typescript: 4.6.3
     vite: 2.9.5
     vitest: 0.9.4
@@ -5465,6 +5503,16 @@ __metadata:
   version: 2.28.0
   resolution: "date-fns@npm:2.28.0"
   checksum: a0516b2e4f99b8bffc6cc5193349f185f195398385bdcaf07f17c2c4a24473c99d933eb0018be4142a86a6d46cb0b06be6440ad874f15e795acbedd6fd727a1f
+  languageName: node
+  linkType: hard
+
+"deasync@npm:0.1.26":
+  version: 0.1.26
+  resolution: "deasync@npm:0.1.26"
+  dependencies:
+    bindings: ^1.5.0
+    node-addon-api: ^1.7.1
+  checksum: 4ac04ba620a2a1d2954e6c54b4fcc2b4d79866d8981fc5eab7cec1b031af4133fa799f4c9f875479d096f2384e5e7f789991e062f486630fea8fd75faaed10e2
   languageName: node
   linkType: hard
 
@@ -6682,6 +6730,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"file-uri-to-path@npm:1.0.0":
+  version: 1.0.0
+  resolution: "file-uri-to-path@npm:1.0.0"
+  checksum: b648580bdd893a008c92c7ecc96c3ee57a5e7b6c4c18a9a09b44fb5d36d79146f8e442578bc0e173dc027adf3987e254ba1dfd6e3ec998b7c282873010502144
+  languageName: node
+  linkType: hard
+
 "fill-range@npm:^7.0.1":
   version: 7.0.1
   resolution: "fill-range@npm:7.0.1"
@@ -7087,6 +7142,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gql-ls@portal:../../nm-packages/gql-ls::locator=%40bloup%2Fgqlt%40workspace%3Apackages%2Fgqlt":
+  version: 0.0.0-use.local
+  resolution: "gql-ls@portal:../../nm-packages/gql-ls::locator=%40bloup%2Fgqlt%40workspace%3Apackages%2Fgqlt"
+  dependencies:
+    "@graphql-codegen/core": 2.5.1
+    "@graphql-codegen/typescript": 2.4.10
+    "@graphql-codegen/typescript-operations": 2.3.7
+    deasync: 0.1.26
+    graphql: 16.5.0
+  languageName: node
+  linkType: soft
+
 "graceful-fs@npm:^4.1.2, graceful-fs@npm:^4.1.6, graceful-fs@npm:^4.2.0, graceful-fs@npm:^4.2.4, graceful-fs@npm:^4.2.6, graceful-fs@npm:^4.2.9":
   version: 4.2.9
   resolution: "graceful-fs@npm:4.2.9"
@@ -7193,7 +7260,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graphql@npm:*":
+"graphql@npm:16.5.0":
   version: 16.5.0
   resolution: "graphql@npm:16.5.0"
   checksum: a82a926d085818934d04fdf303a269af170e79de943678bd2726370a96194f9454ade9d6d76c2de69afbd7b9f0b4f8061619baecbbddbe82125860e675ac219e
@@ -7660,11 +7727,11 @@ __metadata:
   linkType: hard
 
 "is-core-module@npm:^2.2.0, is-core-module@npm:^2.8.1":
-  version: 2.8.1
-  resolution: "is-core-module@npm:2.8.1"
+  version: 2.9.0
+  resolution: "is-core-module@npm:2.9.0"
   dependencies:
     has: ^1.0.3
-  checksum: 418b7bc10768a73c41c7ef497e293719604007f88934a6ffc5f7c78702791b8528102fb4c9e56d006d69361549b3d9519440214a74aefc7e0b79e5e4411d377f
+  checksum: b27034318b4b462f1c8f1dfb1b32baecd651d891a4e2d1922135daeff4141dfced2b82b07aef83ef54275c4a3526aa38da859223664d0868ca24182badb784ce
   languageName: node
   linkType: hard
 
@@ -8970,6 +9037,15 @@ __metadata:
     lower-case: ^2.0.2
     tslib: ^2.0.3
   checksum: 0b2ebc113dfcf737d48dde49cfebf3ad2d82a8c3188e7100c6f375e30eafbef9e9124aadc3becef237b042fd5eb0aad2fd78669c20972d045bbe7fea8ba0be5c
+  languageName: node
+  linkType: hard
+
+"node-addon-api@npm:^1.7.1":
+  version: 1.7.2
+  resolution: "node-addon-api@npm:1.7.2"
+  dependencies:
+    node-gyp: latest
+  checksum: 938922b3d7cb34ee137c5ec39df6289a3965e8cab9061c6848863324c21a778a81ae3bc955554c56b6b86962f6ccab2043dd5fa3f33deab633636bd28039333f
   languageName: node
   linkType: hard
 
@@ -10526,7 +10602,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:7.3.5, semver@npm:^7.3.5":
+"semver@npm:7.3.5":
   version: 7.3.5
   resolution: "semver@npm:7.3.5"
   dependencies:
@@ -10543,6 +10619,17 @@ __metadata:
   bin:
     semver: ./bin/semver.js
   checksum: 1b26ecf6db9e8292dd90df4e781d91875c0dcc1b1909e70f5d12959a23c7eebb8f01ea581c00783bbee72ceeaad9505797c381756326073850dc36ed284b21b9
+  languageName: node
+  linkType: hard
+
+"semver@npm:^7.3.5":
+  version: 7.3.7
+  resolution: "semver@npm:7.3.7"
+  dependencies:
+    lru-cache: ^6.0.0
+  bin:
+    semver: bin/semver.js
+  checksum: 2fa3e877568cd6ce769c75c211beaed1f9fce80b28338cadd9d0b6c40f2e2862bafd62c19a6cff42f3d54292b7c623277bcab8816a2b5521cf15210d43e75232
   languageName: node
   linkType: hard
 
@@ -11359,12 +11446,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-invariant@npm:^0.10.2":
-  version: 0.10.2
-  resolution: "ts-invariant@npm:0.10.2"
+"ts-invariant@npm:^0.10.3":
+  version: 0.10.3
+  resolution: "ts-invariant@npm:0.10.3"
   dependencies:
     tslib: ^2.1.0
-  checksum: 684e78933e7a7a36da44f1bd4a4a8f96a3aeadd004f77fa8f8b816491d1b334b239dc1fcfff12a04092a489761817daa178e5feb485ed187d108f5e57df9a80f
+  checksum: bb07d56fe4aae69d8860e0301dfdee2d375281159054bc24bf1e49e513fb0835bf7f70a11351344d213a79199c5e695f37ebbf5a447188a377ce0cd81d91ddb5
   languageName: node
   linkType: hard
 
@@ -11435,17 +11522,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tslib@npm:2.4.0, tslib@npm:^2, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.3.0, tslib@npm:^2.3.1, tslib@npm:~2.4.0":
+  version: 2.4.0
+  resolution: "tslib@npm:2.4.0"
+  checksum: 8c4aa6a3c5a754bf76aefc38026134180c053b7bd2f81338cb5e5ebf96fefa0f417bff221592bf801077f5bf990562f6264fecbc42cd3309b33872cb6fc3b113
+  languageName: node
+  linkType: hard
+
 "tslib@npm:^1.8.1, tslib@npm:^1.9.0":
   version: 1.14.1
   resolution: "tslib@npm:1.14.1"
   checksum: dbe628ef87f66691d5d2959b3e41b9ca0045c3ee3c7c7b906cc1e328b39f199bb1ad9e671c39025bd56122ac57dfbf7385a94843b1cc07c60a4db74795829acd
-  languageName: node
-  linkType: hard
-
-"tslib@npm:^2, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.3.0, tslib@npm:^2.3.1, tslib@npm:~2.4.0":
-  version: 2.4.0
-  resolution: "tslib@npm:2.4.0"
-  checksum: 8c4aa6a3c5a754bf76aefc38026134180c053b7bd2f81338cb5e5ebf96fefa0f417bff221592bf801077f5bf990562f6264fecbc42cd3309b33872cb6fc3b113
   languageName: node
   linkType: hard
 
@@ -11804,15 +11891,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"use-sync-external-store@npm:^1.0.0":
-  version: 1.1.0
-  resolution: "use-sync-external-store@npm:1.1.0"
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 8993a0b642f91d7fcdbb02b7b3ac984bd3af4769686f38291fe7fcfe73dfb73d6c64d20dfb7e5e7fbf5a6da8f5392d6f8e5b00c243a04975595946e82c02b883
-  languageName: node
-  linkType: hard
-
 "util-deprecate@npm:^1.0.1, util-deprecate@npm:~1.0.1":
   version: 1.0.2
   resolution: "util-deprecate@npm:1.0.2"
@@ -11975,7 +12053,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "web-app@workspace:packages/web-app"
   dependencies:
-    "@apollo/client": "*"
+    "@apollo/client": 3.6.6
     "@bloup/net": "workspace:*"
     "@bloup/ui": "workspace:*"
     "@emotion/react": 11.9.0
@@ -11988,13 +12066,13 @@ __metadata:
     "@types/react-router-dom": 5.3.3
     "@vitejs/plugin-react": 1.3.1
     core-js: 3.21.1
-    graphql: "*"
+    graphql: 16.5.0
     prettier: 2.6.2
     react: 18.0.0
     react-dom: 18.0.0
     react-router-dom: 6.3.0
     regenerator-runtime: 0.13.9
-    tslib: 2.3.1
+    tslib: 2.4.0
     typescript: 4.6.3
     vite: 2.9.5
     vitest: 0.9.4
@@ -12430,12 +12508,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zen-observable-ts@npm:^1.2.0":
-  version: 1.2.3
-  resolution: "zen-observable-ts@npm:1.2.3"
+"zen-observable-ts@npm:^1.2.0, zen-observable-ts@npm:^1.2.5":
+  version: 1.2.5
+  resolution: "zen-observable-ts@npm:1.2.5"
   dependencies:
     zen-observable: 0.8.15
-  checksum: 0548b555c67671f1240fb416755d2c27abf095b74a9e25c1abf23b2e15de40e6b076c678a162021358fe62914864eb9f0a57cd65e203d66c4988a08b220e6172
+  checksum: 3b707b7a0239a9bc40f73ba71b27733a689a957c1f364fabb9fa9cbd7d04b7c2faf0d517bf17004e3ed3f4330ac613e84c0d32313e450ddaa046f3350af44541
   languageName: node
   linkType: hard
 

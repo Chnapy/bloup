@@ -26,6 +26,7 @@ module.exports = {
     project: [
       './tsconfig?(.eslint).json',
       './packages/*/tsconfig?(.eslint).json',
+      './nm-packages/*/tsconfig?(.eslint).json',
     ],
     tsconfigRootDir: '.',
     ecmaVersion: 8, // to enable features such as async/await
@@ -85,6 +86,9 @@ module.exports = {
         'unicorn/numeric-separators-style': 'off',
         'unicorn/no-null': 'off',
         'unicorn/no-array-for-each': 'off',
+        'unicorn/no-useless-undefined': 'off',
+        'unicorn/no-array-callback-reference': 'off',
+        'unicorn/no-array-reduce': 'off',
       }),
     },
     {

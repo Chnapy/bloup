@@ -11,6 +11,9 @@
       "path": "packages/api"
     },
     {
+      "path": "packages/gqlt"
+    },
+    {
       "path": "packages/net"
     },
     {
