@@ -53,7 +53,6 @@ export class GoogleStrategy extends PassportStrategy(Strategy, strategyName) {
     profile: Profile,
     done: VerifyCallback
   ) {
-    console.log('P', profile, accessToken, refreshToken);
     const { id, displayName, name, emails = [], photos } = profile;
 
     const googleUser: GoogleUser = {

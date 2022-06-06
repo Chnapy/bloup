@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "composite": false,
+    "outDir": "dist",
+    "sourceMap": false,
+    "declaration": false,
+    "module": "commonjs",
+    "lib": ["ESNext", "dom"]
+  },
+  "include": ["src", "*.ts"]
+}

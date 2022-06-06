@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./node_modules/.cache/dist",
+    "rootDir": "./src",
+    "tsBuildInfoFile": "./node_modules/.cache/.tsbuildinfo",
+    "plugins": [
+      {
+        "name": "gql-ls",
+        "schema": "../api/schema.graphql",
+        "verbose": true
+      }
+    ]
+  },
+  "include": ["./src/**/*"],
+  "references": []
+}

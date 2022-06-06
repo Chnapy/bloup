@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "tsBuildInfoFile": "./node_modules/.cache/.tsbuildinfo",
+    "paths": {
+      "@bloup/gqlt": ["./src/index.ts"]
+    }
+  },
+  "include": ["./src/**/*"],
+  "references": []
+}

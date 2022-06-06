@@ -15,9 +15,9 @@
     "c:pkg:deps:fix": "syncpack fix-mismatches",
     "c:pkg:fix": "yarn c:pkg:deps:fix && yarn c:pkg:format",
     "c:pkg:format": "syncpack format",
-    "c:test": "sh -c \"if [ $INIT_CWD = $PROJECT_CWD ]; then yarn test ${0:-}; else vitest --dir $INIT_CWD --config $INIT_CWD/vite*.config.ts --run --passWithNoTests ${0:-}; fi\"",
+    "c:test": "cd $INIT_CWD && yarn c:test:watch --run",
     "c:test:ci": "cd $INIT_CWD && yarn c:test",
-    "c:test:watch": "cd $INIT_CWD && yarn c:test -w",
+    "c:test:watch": "sh -c \"if [ $INIT_CWD = $PROJECT_CWD ]; then yarn test ${0:-}; else vitest --dir $INIT_CWD --config $INIT_CWD/vite*.config.ts --outputTruncateLength=9999 --passWithNoTests ${0:-}; fi\"",
     "c:type": "cd $INIT_CWD && tsc -b",
     "gen:tsconfig": "yarn node ${PROJECT_CWD}/scripts/generators/tsconfig.js && prettier -w ${PROJECT_CWD}/**/tsconfig.json",
     "test": "yarn workspaces foreach -v --exclude 'bloup' run c:test ${0:-}"
@@ -46,7 +46,7 @@
     "prettier": "2.6.2",
     "react": "18.0.0",
     "syncpack": "6.2.0",
-    "tslib": "2.3.1",
+    "tslib": "2.4.0",
     "typescript": "4.6.3",
     "vite": "2.9.5",
     "vitest": "0.9.4"

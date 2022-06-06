@@ -6,6 +6,6 @@ query UserList {
 
 fragment user on User {
   id
-  exampleField
-  toto
+  name
+  email
 }

@@ -5,3 +5,5 @@ node_modules/
 .pnp.*
 schema.graphql
 *.generated.ts
+
+**/src/plugin/index.js

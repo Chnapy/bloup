@@ -28,8 +28,6 @@ export class AuthService {
       this.googleStrategy.authenticate(request);
     });
 
-    console.log('user', googleUser);
-
     const getUser = async () => {
       const user = await this.usersService.findOneBy({
         email: googleUser.email,
