@@ -750,7 +750,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],\
       [\
         "@jridgewell/trace-mapping",\
-        "npm:0.3.4"\
+        "npm:0.3.13"\
       ],\
       [\
         "@n1ru4l/graphql-live-query",\
@@ -4310,7 +4310,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@ampproject-remapping-npm-2.1.2-d1536e36d6-e023f92cdd.zip/node_modules/@ampproject/remapping/",\
           "packageDependencies": [\
             ["@ampproject/remapping", "npm:2.1.2"],\
-            ["@jridgewell/trace-mapping", "npm:0.3.4"]\
+            ["@jridgewell/trace-mapping", "npm:0.3.13"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -9203,10 +9203,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@jridgewell/trace-mapping", [\
-        ["npm:0.3.4", {\
-          "packageLocation": "./.yarn/cache/@jridgewell-trace-mapping-npm-0.3.4-d0db906c7f-ab8bce84bb.zip/node_modules/@jridgewell/trace-mapping/",\
+        ["npm:0.3.13", {\
+          "packageLocation": "./.yarn/cache/@jridgewell-trace-mapping-npm-0.3.13-b1ff8985e7-e38254e830.zip/node_modules/@jridgewell/trace-mapping/",\
           "packageDependencies": [\
-            ["@jridgewell/trace-mapping", "npm:0.3.4"],\
+            ["@jridgewell/trace-mapping", "npm:0.3.13"],\
             ["@jridgewell/resolve-uri", "npm:3.0.5"],\
             ["@jridgewell/sourcemap-codec", "npm:1.4.11"]\
           ],\

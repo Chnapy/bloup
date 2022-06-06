@@ -1,12 +1,12 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "composite": false,
-    "outDir": "dist",
-    "sourceMap": false,
-    "declaration": false,
+    "outDir": "./node_modules/.cache/dist",
     "module": "commonjs",
-    "lib": ["ESNext", "dom"]
+    "lib": ["ESNext", "dom"],
+    "rootDir": "./src",
+    "tsBuildInfoFile": "./node_modules/.cache/.tsbuildinfo"
   },
-  "include": ["src", "*.ts"]
+  "include": ["./src/**/*"],
+  "references": []
 }

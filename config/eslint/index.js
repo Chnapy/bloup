@@ -2,6 +2,9 @@ const { graphqlExtends, graphqlRules } = require('./rules/graphql-rules');
 const { jsRules } = require('./rules/js-rules');
 const { reactExtends, reactRules } = require('./rules/react-rules');
 const { tsExtends, tsRules } = require('./rules/ts-rules');
+const path = require('path');
+
+const { workspaces } = require('../../package.json');
 
 const prettierRules = {
   'prettier/prettier': ['error', {}, { usePrettierrc: true }], // Includes .prettierrc.js rules
@@ -23,11 +26,11 @@ module.exports = {
     es6: true,
   },
   parserOptions: {
-    project: [
-      './tsconfig?(.eslint).json',
-      './packages/*/tsconfig?(.eslint).json',
-      './nm-packages/*/tsconfig?(.eslint).json',
-    ],
+    project: ['./tsconfig?(.eslint).json'].concat(
+      workspaces.map(
+        (workspace) => `./${path.join(workspace, 'tsconfig?(.eslint).json')}`
+      )
+    ),
     tsconfigRootDir: '.',
     ecmaVersion: 8, // to enable features such as async/await
   },

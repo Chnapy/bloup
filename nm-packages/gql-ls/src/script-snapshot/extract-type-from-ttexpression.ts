@@ -4,8 +4,8 @@ import { DocumentNode, parse } from 'graphql';
 
 const documentRegex = /^[A-Za-z]*`\s*(.+)\s*`$/s;
 
-const variablesRegex = /type ([\dA-Za-z]+Variables) = /s;
-const operationsRegex = /type ([\dA-Za-z]+Operation) = /s;
+const variablesRegex = /type (\w+Variables) = /s;
+const operationsRegex = /type (\w+Operation) = /s;
 
 type CodegenPlugin = typeof plugins[number];
 const plugins = [
