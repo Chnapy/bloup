@@ -5,5 +5,3 @@ node_modules/
 .pnp.*
 schema.graphql
 *.generated.ts
-
-nm-packages/**/*
