@@ -29,7 +29,8 @@ module.exports = {
     project: ['./tsconfig?(.eslint).json'].concat(
       workspaces.map(
         (workspace) => `./${path.join(workspace, 'tsconfig?(.eslint).json')}`
-      )
+      ),
+      './scripts/tsconfig.json'
     ),
     tsconfigRootDir: '.',
     ecmaVersion: 8, // to enable features such as async/await
