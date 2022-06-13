@@ -5,16 +5,13 @@
     "noEmit": true,
     "tsBuildInfoFile": "./node_modules/.cache/.tsbuildinfo"
   },
-  "include": ["*.js", "scripts/**/*.js"],
+  "include": ["*.js"],
   "references": [
     {
+      "path": "scripts"
+    },
+    {
       "path": "packages/api"
-    },
-    {
-      "path": "packages/gqlt"
-    },
-    {
-      "path": "packages/net"
     },
     {
       "path": "packages/ui"

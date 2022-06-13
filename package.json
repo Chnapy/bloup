@@ -2,7 +2,7 @@
   "name": "bloup",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "yarn@3.2.0",
+  "packageManager": "yarn@3.2.1",
   "license": "UNLICENSED",
   "workspaces": [
     "packages/*"
@@ -19,7 +19,8 @@
     "c:test:ci": "cd $INIT_CWD && yarn c:test",
     "c:test:watch": "sh -c \"if [ $INIT_CWD = $PROJECT_CWD ]; then yarn test ${0:-}; else vitest --dir $INIT_CWD --config $INIT_CWD/vite*.config.ts --outputTruncateLength=9999 --passWithNoTests ${0:-}; fi\"",
     "c:type": "cd $INIT_CWD && tsc -b",
-    "gen:tsconfig": "yarn node ${PROJECT_CWD}/scripts/generators/tsconfig.js && prettier -w ${PROJECT_CWD}/**/tsconfig.json",
+    "c:type-gql": "ts-node scripts/tsc-gql/tsc-gql.ts -p $INIT_CWD/${0:-}",
+    "gen:tsconfig": "ts-node ${PROJECT_CWD}/scripts/generators/tsconfig.ts && prettier -w ${PROJECT_CWD}/**/tsconfig.json",
     "test": "yarn workspaces foreach -v --exclude 'bloup' run c:test ${0:-}"
   },
   "devDependencies": {
@@ -46,8 +47,10 @@
     "prettier": "2.6.2",
     "react": "18.0.0",
     "syncpack": "6.2.0",
+    "ts-gql-plugin": "1.1.0",
+    "ts-node": "10.8.1",
     "tslib": "2.4.0",
-    "typescript": "4.6.3",
+    "typescript": "4.7.3",
     "vite": "2.9.5",
     "vitest": "0.9.4"
   },

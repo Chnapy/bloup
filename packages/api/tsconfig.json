@@ -7,6 +7,6 @@
     "rootDir": "./src",
     "tsBuildInfoFile": "./node_modules/.cache/.tsbuildinfo"
   },
-  "include": ["./src/**/*"],
+  "include": ["src"],
   "references": []
 }
