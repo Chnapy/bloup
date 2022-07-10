@@ -15,6 +15,9 @@
     },
     {
       "path": "packages/web-app"
+    },
+    {
+      "path": "packages/web-media-torrent"
     }
   ]
 }

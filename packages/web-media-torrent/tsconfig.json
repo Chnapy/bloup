@@ -1,0 +1,20 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "jsxImportSource": "@emotion/react",
+    "outDir": "./node_modules/.cache/dist",
+    "rootDir": "./src",
+    "tsBuildInfoFile": "./node_modules/.cache/.tsbuildinfo",
+    "target": "ES5",
+    "useDefineForClassFields": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "skipLibCheck": true,
+    "module": "CommonJS",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx"
+  },
+  "files": [],
+  "include": ["./src/**/*"],
+  "references": []
+}
