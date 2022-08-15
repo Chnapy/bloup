@@ -8,6 +8,7 @@
     "packages/*"
   ],
   "scripts": {
+    "c:format": "prettier -c $INIT_CWD",
     "c:format:fix": "prettier -w $INIT_CWD",
     "c:lint:ci": "eslint $INIT_CWD",
     "c:lint:fix": "eslint $INIT_CWD --cache --cache-location node_modules/.cache/.eslintcache --fix",

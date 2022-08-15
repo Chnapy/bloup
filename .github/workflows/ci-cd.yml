@@ -7,34 +7,16 @@ on:
   pull_request:
 
 jobs:
-  master:
+  checks:
+    name: Check - Packages / Format / Lint / Type / Tests
     runs-on: ubuntu-latest
-    if: ${{ github.event_name != 'pull_request' }}
-    steps:
-      - uses: actions/checkout@v3
-        name: Checkout [master]
-        with:
-          fetch-depth: 0
-
-  pr:
-    runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'pull_request' }}
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
-          fetch-depth: 0
-
-  check-packages:
-    name: Check - Packages
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v3
 
       - uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version-file: '.nvmrc'
 
       - name: Check - Yarn dedupe
         run: yarn dedupe -c
@@ -42,55 +24,22 @@ jobs:
       - name: Check - Packages dependencies
         run: yarn c:pkg:deps
 
-  check-lint:
-    name: Check - Lint
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - uses: actions/checkout@v3
-
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '16'
+      - name: Check - Format
+        run: yarn c:format
 
       - name: Check - Lint
         run: yarn c:lint:ci
 
-  check-test:
-    name: Check - Test
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - uses: actions/checkout@v3
-
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '16'
+      - name: Check - Type
+        run: yarn c:type
 
       - name: Check - Test
         run: yarn c:test:ci
 
-  check-type:
-    name: Check - Type
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - uses: actions/checkout@v3
-
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-
-      - name: Check - Type
-        run: yarn c:type
-
   build-api:
     name: Build api + Deploy if master - staging
     needs:
-      - check-packages
-      - check-lint
-      - check-test
-      - check-type
+      - checks
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
