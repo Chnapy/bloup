@@ -12,7 +12,7 @@
     "c:lint:ci": "eslint $INIT_CWD",
     "c:lint:fix": "eslint $INIT_CWD --cache --cache-location node_modules/.cache/.eslintcache --fix",
     "c:pkg:deps": "syncpack syncpack lint-semver-ranges",
-    "c:pkg:deps:fix": "syncpack fix-mismatches -w",
+    "c:pkg:deps:fix": "syncpack fix-mismatches",
     "c:pkg:fix": "yarn c:pkg:deps:fix && yarn c:pkg:format",
     "c:pkg:format": "syncpack format",
     "c:test": "jest $INIT_CWD --cache --passWithNoTests",
