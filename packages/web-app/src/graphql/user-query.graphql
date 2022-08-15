@@ -1,5 +1,0 @@
-query UserQuery {
-  users {
-    exampleField
-  }
-}

@@ -5,13 +5,16 @@
     "noEmit": true,
     "tsBuildInfoFile": "./node_modules/.cache/.tsbuildinfo"
   },
-  "include": ["*.ts", "*.js", "scripts/**/*.js"],
+  "include": ["*.js"],
   "references": [
+    {
+      "path": "scripts"
+    },
     {
       "path": "packages/api"
     },
     {
-      "path": "packages/bloup-ui"
+      "path": "packages/ui"
     },
     {
       "path": "packages/web-app"

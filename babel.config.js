@@ -7,11 +7,13 @@ module.exports = (
   api
 ) => {
   api.cache.using(() => process.env.NODE_ENV);
+
   return {
     babelrcRoots: ['packages/*'],
     presets: [
       ['@babel/preset-env', { targets: { node: 'current' } }],
       ['@babel/preset-typescript', { onlyRemoveTypeImports: true }],
+      ['@babel/preset-react', { runtime: 'automatic' }],
     ],
   };
 };

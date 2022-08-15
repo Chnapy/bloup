@@ -3,11 +3,14 @@ FROM node:16 as builder
 RUN mkdir -p /usr/src/app
 RUN chown -R node:node /usr/src/app
 
-USER node
-
 WORKDIR /usr/src/app
 
 COPY --chown=node:node . ./
+
+# fix issue with esbuild EACCESS
+RUN chmod +x -R /usr/src/app/.yarn/unplugged
+
+USER node
 
 RUN yarn workspace web-app build
 

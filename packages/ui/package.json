@@ -1,0 +1,11 @@
+{
+  "name": "@bloup/ui",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "yarn@3.2.0",
+  "license": "UNLICENSED",
+  "main": "./src/index.ts",
+  "devDependencies": {
+    "@types/jest": "28.1.6"
+  }
+}

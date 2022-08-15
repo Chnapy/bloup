@@ -5,7 +5,6 @@
     "outDir": "./node_modules/.cache/dist",
     "rootDir": "./src",
     "tsBuildInfoFile": "./node_modules/.cache/.tsbuildinfo",
-
     "target": "ESNext",
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
@@ -14,14 +13,19 @@
     "module": "ESNext",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "noImplicitAny": false,
+    "plugins": [
+      {
+        "name": "ts-gql-plugin"
+      }
+    ]
   },
   "files": [],
-  "include": ["./src/**/*"],
+  "include": ["src"],
   "references": [
-    { "path": "./tsconfig.node.json" },
     {
-      "path": "../bloup-ui"
+      "path": "../ui"
     }
   ]
 }

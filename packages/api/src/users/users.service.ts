@@ -2,30 +2,37 @@ import { Injectable } from '@nestjs/common';
 import { User } from './entities/user.entity';
 import { CreateUserInput } from './dto/create-user.input';
 import { UpdateUserInput } from './dto/update-user.input';
+import { FindOptionsWhere, Repository } from 'typeorm';
+import { InjectRepository } from '@nestjs/typeorm';
 
 @Injectable()
 export class UsersService {
+  constructor(
+    @InjectRepository(User)
+    private readonly usersRepository: Repository<User>
+  ) {}
+
   create(createUserInput: CreateUserInput) {
-    return 'This action adds a new user';
+    return this.usersRepository.save(createUserInput);
   }
 
-  findAll(): User[] {
-    return [
-      {
-        exampleField: 12,
-      },
-    ];
+  findAll() {
+    return this.usersRepository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} user`;
+  findOne(id: User['id']) {
+    return this.usersRepository.findOneBy({ id });
   }
 
-  update(id: number, updateUserInput: UpdateUserInput) {
-    return `This action updates a #${id} user`;
+  findOneBy(where: FindOptionsWhere<User>) {
+    return this.usersRepository.findOneBy(where);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} user`;
+  update(updateUserInput: UpdateUserInput) {
+    return this.usersRepository.update(updateUserInput.id, updateUserInput);
+  }
+
+  remove(id: User['id']) {
+    return this.usersRepository.delete(id);
   }
 }

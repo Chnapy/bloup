@@ -5,9 +5,8 @@
     "arcanis.vscode-zipfs",
     "dbaeumer.vscode-eslint",
     "styled-components.vscode-styled-components",
-    "GraphQL.vscode-graphql",
+    "graphql.vscode-graphql",
     "ms-azuretools.vscode-docker",
-    "donjayamanne.git-extension-pack",
-    "EditorConfig.EditorConfig"
+    "editorconfig.editorconfig"
   ]
 }

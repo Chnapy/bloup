@@ -16,8 +16,13 @@ This is a sandbox repo to try some techs and ways of doing
 - Devops
   - CI cover and optimization
   - CD optimization using Docker
-  - PR preview environment
   - Docker dev environment (including Windows)
+
+TODO
+
+- Devops
+  - App deploy on change only
+  - PR preview environment
 
 [Nx framework](https://nx.dev/) was also tried. Powerful but quite restrictive and not compatible with Yarn 2+.
 
@@ -42,7 +47,7 @@ This repo follows a monorepo architecture using Yarn 3 with its [workspace featu
 To target a specific package simply use `yarn workspace <pkg_name>`:
 
 - `yarn workspace web-app add -D typescript`
-- `yarn workspace web-app c:lint`
+- `yarn workspace web-app c:lint:fix`
 - `yarn workspace web-app c:test`
 
 Note that [shared scripts](https://yarnpkg.com/getting-started/qa/#how-to-share-scripts-between-workspaces) should contains `:` in there names.
@@ -55,17 +60,19 @@ You can use them with these yarn commands:
 - `gen:tsconfig` - Generate all the `tsconfig.json` files with default values and packages references.
   You should run it after add/remove a package.
 - `c:pkg:fix` - Format every `package.json` files and fix as possible dependencies versions to avoid multiple versions for a single one.
-- `c:lint` - ESLint in fix mode
-- `c:format` - Prettier in fix mode
+- `c:lint:fix` - ESLint in fix mode
+- `c:format:fix` - Prettier in fix mode
 
 ## Esbuild & Vite
 
 App `web-app` uses [Vite](https://github.com/vitejs/vite) build tool instead of common Webpack.
 Vite uses [esbuild](https://github.com/evanw/esbuild) which is a non-JS builder allowing big performance improvement, and trivial config.
 
-### Vitest
+### Jest
 
-Like with Vite, [Vitest](https://github.com/vitest-dev/vitest) is a esbuild-based fast testing tool. It's used for the whole repo.
+Jest is used for testing.
+
+[Vitest](https://github.com/vitest-dev/vitest) was tried as a esbuild-based fast testing tool, but it does not work well with monorepos.
 
 ## Zero-installs principe
 
