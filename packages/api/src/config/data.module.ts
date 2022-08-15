@@ -20,7 +20,7 @@ export type GraphQLContext = {
       type: 'mongodb',
       entities: ['../**/*.entity.js'],
       autoLoadEntities: true,
-      synchronize: true,
+      synchronize: isDev,
       cli: {
         entitiesDir: '../**/entities',
         migrationsDir: 'migrations',

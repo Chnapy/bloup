@@ -4,11 +4,17 @@
 
 type User {
   id: ID!
+  roles: [UserRole!]!
   oauthProvider: OAuthProvider!
   oauthId: String!
   email: String!
   name: String!
   picture: String
+}
+
+enum UserRole {
+  USER
+  ADMIN
 }
 
 enum OAuthProvider {

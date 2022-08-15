@@ -1,6 +1,7 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { OAuth2Client } from 'google-auth-library';
 import { OAuthProvider } from '../users/entities/enums/oauth-provider';
+import { UserRole } from '../users/entities/enums/user-role';
 import { UsersService } from '../users/users.service';
 
 @Injectable()
@@ -33,6 +34,7 @@ export class AuthService {
         oauthId,
       })) ??
       (await this.usersService.create({
+        roles: [UserRole.USER],
         oauthProvider: OAuthProvider.GOOGLE,
         oauthId,
         email: payload.email!,
