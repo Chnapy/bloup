@@ -1,8 +1,7 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "module": "commonjs",
-    "types": ["vitest/globals", "node"]
+    "module": "commonjs"
   },
   "include": [
     "**/*.test.ts",
