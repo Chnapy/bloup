@@ -1,5 +1,6 @@
 import { UseGuards } from '@nestjs/common';
 import { Args, ID, Mutation, Query, Resolver } from '@nestjs/graphql';
+import { CurrentUser } from '../auth/current-user';
 import { GqlAuthGuard } from '../auth/gql-auth-guard';
 import { UpdateUserInput } from './dto/update-user.input';
 import { User } from './entities/user.entity';
@@ -25,5 +26,11 @@ export class UsersResolver {
   @UseGuards(GqlAuthGuard)
   updateUser(@Args('updateUserInput') updateUserInput: UpdateUserInput) {
     return this.usersService.update(updateUserInput);
+  }
+
+  @Query(() => User, { name: 'currentUser' })
+  @UseGuards(GqlAuthGuard)
+  currentUser(@CurrentUser() currentUser: User) {
+    return currentUser;
   }
 }

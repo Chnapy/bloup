@@ -15,16 +15,10 @@ enum OAuthProvider {
   GOOGLE
 }
 
-type Auth {
-  id: ID!
-  accessToken: String!
-  user: User!
-}
-
 type Query {
   users: [User!]!
   user(id: ID!): User!
-  authByGoogle(code: String!): Auth!
+  currentUser: User!
 }
 
 type Mutation {

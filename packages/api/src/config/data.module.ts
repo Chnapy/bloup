@@ -4,12 +4,12 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ServerResponse } from 'node:http';
 import type { MongoConnectionOptions } from 'typeorm/driver/mongodb/MongoConnectionOptions';
-import { ExpressRequest } from '../auth/google.strategy';
+import { RequestWithUser } from '../auth/google.strategy';
 
 const isDev = process.env.NODE_ENV === 'development';
 
 export type GraphQLContext = {
-  req: ExpressRequest;
+  req: RequestWithUser;
   res: ServerResponse;
 };
 

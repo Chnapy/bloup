@@ -12,13 +12,14 @@ const StyledApp = styled.div`
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
+  uri: 'http://localhost:3333/graphql',
 });
 
 export const App: React.FC = () => (
   <ApolloProvider client={client}>
     <StyledApp>
       toto: {toto} welcome web-app
-      <Foo />
+      {/* <Foo /> */}
       {/* START: routes */}
       {/* These routes and navigation have been generated for you */}
       {/* Feel free to move and update them to fit your needs */}

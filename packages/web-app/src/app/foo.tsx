@@ -2,7 +2,7 @@ import { gql, useQuery } from '@apollo/client';
 
 export const Foo: React.FC = () => {
   const { data } = useQuery(
-    gql(`#graphql
+    gql(`
       query Foo {
         users {
           id

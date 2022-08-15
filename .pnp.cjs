@@ -959,24 +959,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:2.4.1"\
       ],\
       [\
-        "@types/oauth",\
-        "npm:0.9.1"\
-      ],\
-      [\
         "@types/parse-json",\
         "npm:4.0.0"\
-      ],\
-      [\
-        "@types/passport",\
-        "npm:1.0.7"\
-      ],\
-      [\
-        "@types/passport-google-oauth20",\
-        "npm:2.0.11"\
-      ],\
-      [\
-        "@types/passport-oauth2",\
-        "npm:1.4.11"\
       ],\
       [\
         "@types/prop-types",\
@@ -1379,8 +1363,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:1.5.1"\
       ],\
       [\
-        "base64url",\
-        "npm:3.0.1"\
+        "bignumber.js",\
+        "npm:9.1.0"\
       ],\
       [\
         "binary-extensions",\
@@ -1425,6 +1409,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       [\
         "buffer",\
         "npm:5.7.1"\
+      ],\
+      [\
+        "buffer-equal-constant-time",\
+        "npm:1.0.1"\
       ],\
       [\
         "buffer-from",\
@@ -1787,6 +1775,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:3.1.1"\
       ],\
       [\
+        "ecdsa-sig-formatter",\
+        "npm:1.0.11"\
+      ],\
+      [\
         "ee-first",\
         "npm:1.1.1"\
       ],\
@@ -2047,6 +2039,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:4.17.3"\
       ],\
       [\
+        "extend",\
+        "npm:3.0.2"\
+      ],\
+      [\
         "external-editor",\
         "npm:3.1.0"\
       ],\
@@ -2077,6 +2073,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       [\
         "fast-safe-stringify",\
         "npm:2.1.1"\
+      ],\
+      [\
+        "fast-text-encoding",\
+        "npm:1.0.4"\
       ],\
       [\
         "fastq",\
@@ -2191,6 +2191,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:4.0.4"\
       ],\
       [\
+        "gaxios",\
+        "npm:5.0.1"\
+      ],\
+      [\
+        "gcp-metadata",\
+        "npm:5.0.0"\
+      ],\
+      [\
         "gensync",\
         "npm:1.0.0-beta.2"\
       ],\
@@ -2235,6 +2243,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:11.1.0"\
       ],\
       [\
+        "google-auth-library",\
+        "npm:8.1.1"\
+      ],\
+      [\
+        "google-p12-pem",\
+        "npm:4.0.0"\
+      ],\
+      [\
         "graceful-fs",\
         "npm:4.2.9"\
       ],\
@@ -2265,6 +2281,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       [\
         "graphql-ws",\
         "virtual:3500261c6862c91b072efce1d88fa1d47c2edbc94e0b54f569f415fb26534877cff5db4fc5fd73cc27adb936af2c3c8fcf8a77d0090d8864a753bd95aea71886#npm:5.7.0"\
+      ],\
+      [\
+        "gtoken",\
+        "npm:6.1.0"\
       ],\
       [\
         "has",\
@@ -2571,6 +2591,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:2.5.2"\
       ],\
       [\
+        "json-bigint",\
+        "npm:1.0.0"\
+      ],\
+      [\
         "json-parse-better-errors",\
         "npm:1.0.2"\
       ],\
@@ -2601,6 +2625,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       [\
         "jsx-ast-utils",\
         "npm:3.2.2"\
+      ],\
+      [\
+        "jwa",\
+        "npm:2.0.0"\
+      ],\
+      [\
+        "jws",\
+        "npm:4.0.0"\
       ],\
       [\
         "levn",\
@@ -2863,6 +2895,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "virtual:97e22f9a26f8149f8c656843efb88f331319789773d27e2071d3182ed227f249d66180887be623c995ef86edaf319b200a836498d5dbd5dc2384462a097c4f8e#npm:2.6.7"\
       ],\
       [\
+        "node-forge",\
+        "npm:1.3.1"\
+      ],\
+      [\
         "node-gyp",\
         "npm:9.0.0"\
       ],\
@@ -2901,10 +2937,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       [\
         "nwsapi",\
         "npm:2.2.0"\
-      ],\
-      [\
-        "oauth",\
-        "npm:0.9.15"\
       ],\
       [\
         "object-assign",\
@@ -3031,12 +3063,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:0.5.2"\
       ],\
       [\
-        "passport-google-oauth20",\
-        "npm:2.0.0"\
-      ],\
-      [\
-        "passport-oauth2",\
-        "npm:1.6.1"\
+        "passport-custom",\
+        "npm:1.1.1"\
       ],\
       [\
         "passport-strategy",\
@@ -3709,10 +3737,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       [\
         "ua-parser-js",\
         "npm:0.7.31"\
-      ],\
-      [\
-        "uid2",\
-        "npm:0.0.4"\
       ],\
       [\
         "unbox-primitive",\
@@ -9766,55 +9790,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["@types/oauth", [\
-        ["npm:0.9.1", {\
-          "packageLocation": "./.yarn/cache/@types-oauth-npm-0.9.1-94ae218a9b-5c079611b4.zip/node_modules/@types/oauth/",\
-          "packageDependencies": [\
-            ["@types/oauth", "npm:0.9.1"],\
-            ["@types/node", "npm:17.0.23"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
       ["@types/parse-json", [\
         ["npm:4.0.0", {\
           "packageLocation": "./.yarn/cache/@types-parse-json-npm-4.0.0-298522afa6-fd6bce2b67.zip/node_modules/@types/parse-json/",\
           "packageDependencies": [\
             ["@types/parse-json", "npm:4.0.0"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["@types/passport", [\
-        ["npm:1.0.7", {\
-          "packageLocation": "./.yarn/cache/@types-passport-npm-1.0.7-a6aaee17b9-1b78fbbb58.zip/node_modules/@types/passport/",\
-          "packageDependencies": [\
-            ["@types/passport", "npm:1.0.7"],\
-            ["@types/express", "npm:4.17.13"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["@types/passport-google-oauth20", [\
-        ["npm:2.0.11", {\
-          "packageLocation": "./.yarn/cache/@types-passport-google-oauth20-npm-2.0.11-a9a0a4f24f-5e87a0bf40.zip/node_modules/@types/passport-google-oauth20/",\
-          "packageDependencies": [\
-            ["@types/passport-google-oauth20", "npm:2.0.11"],\
-            ["@types/express", "npm:4.17.13"],\
-            ["@types/passport", "npm:1.0.7"],\
-            ["@types/passport-oauth2", "npm:1.4.11"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["@types/passport-oauth2", [\
-        ["npm:1.4.11", {\
-          "packageLocation": "./.yarn/cache/@types-passport-oauth2-npm-1.4.11-299820231e-09d047a6c0.zip/node_modules/@types/passport-oauth2/",\
-          "packageDependencies": [\
-            ["@types/passport-oauth2", "npm:1.4.11"],\
-            ["@types/express", "npm:4.17.13"],\
-            ["@types/oauth", "npm:0.9.1"],\
-            ["@types/passport", "npm:1.0.7"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -10711,15 +10691,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@nestjs/testing", "virtual:ee30e4e8621888118e3112c9a4791d8c9d181961a7fc656afb8f9862703185d5aaf75e7d8371b318217947e6ff3ef744eedc1fa54c88d453e07d11fef918be75#npm:8.4.4"],\
             ["@nestjs/typeorm", "virtual:ee30e4e8621888118e3112c9a4791d8c9d181961a7fc656afb8f9862703185d5aaf75e7d8371b318217947e6ff3ef744eedc1fa54c88d453e07d11fef918be75#npm:8.0.3"],\
             ["@types/node", "npm:17.0.23"],\
-            ["@types/passport-google-oauth20", "npm:2.0.11"],\
             ["apollo-server-express", "virtual:ee30e4e8621888118e3112c9a4791d8c9d181961a7fc656afb8f9862703185d5aaf75e7d8371b318217947e6ff3ef744eedc1fa54c88d453e07d11fef918be75#npm:3.6.7"],\
             ["babel-plugin-transform-typescript-metadata", "npm:0.3.2"],\
+            ["google-auth-library", "npm:8.1.1"],\
             ["graphql", "npm:16.5.0"],\
             ["graphql-tools", "virtual:ee30e4e8621888118e3112c9a4791d8c9d181961a7fc656afb8f9862703185d5aaf75e7d8371b318217947e6ff3ef744eedc1fa54c88d453e07d11fef918be75#npm:8.2.5"],\
             ["joi", "npm:17.6.0"],\
             ["mongodb", "npm:4.5.0"],\
             ["passport", "npm:0.5.2"],\
-            ["passport-google-oauth20", "npm:2.0.0"],\
+            ["passport-custom", "npm:1.1.1"],\
             ["reflect-metadata", "npm:0.1.13"],\
             ["rxjs", "npm:7.5.5"],\
             ["source-map-support", "npm:0.5.21"],\
@@ -11047,6 +11027,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["arrify", "npm:1.0.1"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:2.0.1", {\
+          "packageLocation": "./.yarn/cache/arrify-npm-2.0.1-38c408f77c-067c4c1afd.zip/node_modules/arrify/",\
+          "packageDependencies": [\
+            ["arrify", "npm:2.0.1"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["asap", [\
@@ -11294,11 +11281,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["base64url", [\
-        ["npm:3.0.1", {\
-          "packageLocation": "./.yarn/cache/base64url-npm-3.0.1-4c171c4917-a77b2a3a52.zip/node_modules/base64url/",\
+      ["bignumber.js", [\
+        ["npm:9.1.0", {\
+          "packageLocation": "./.yarn/cache/bignumber.js-npm-9.1.0-4f54bd1083-52ec2bb5a3.zip/node_modules/bignumber.js/",\
           "packageDependencies": [\
-            ["base64url", "npm:3.0.1"]\
+            ["bignumber.js", "npm:9.1.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -11490,6 +11477,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["buffer", "npm:6.0.3"],\
             ["base64-js", "npm:1.5.1"],\
             ["ieee754", "npm:1.2.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["buffer-equal-constant-time", [\
+        ["npm:1.0.1", {\
+          "packageLocation": "./.yarn/cache/buffer-equal-constant-time-npm-1.0.1-41826f3419-80bb945f5d.zip/node_modules/buffer-equal-constant-time/",\
+          "packageDependencies": [\
+            ["buffer-equal-constant-time", "npm:1.0.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -12594,6 +12590,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["ecdsa-sig-formatter", [\
+        ["npm:1.0.11", {\
+          "packageLocation": "./.yarn/cache/ecdsa-sig-formatter-npm-1.0.11-b6784e7852-207f9ab1c2.zip/node_modules/ecdsa-sig-formatter/",\
+          "packageDependencies": [\
+            ["ecdsa-sig-formatter", "npm:1.0.11"],\
+            ["safe-buffer", "npm:5.2.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["ee-first", [\
         ["npm:1.1.1", {\
           "packageLocation": "./.yarn/cache/ee-first-npm-1.1.1-33f8535b39-1b4cac778d.zip/node_modules/ee-first/",\
@@ -13540,6 +13546,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["extend", [\
+        ["npm:3.0.2", {\
+          "packageLocation": "./.yarn/cache/extend-npm-3.0.2-e1ca07ac54-a50a8309ca.zip/node_modules/extend/",\
+          "packageDependencies": [\
+            ["extend", "npm:3.0.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["external-editor", [\
         ["npm:3.1.0", {\
           "packageLocation": "./.yarn/cache/external-editor-npm-3.1.0-878e7807af-1c2a616a73.zip/node_modules/external-editor/",\
@@ -13616,6 +13631,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/fast-safe-stringify-npm-2.1.1-7ce89033ca-a851cbddc4.zip/node_modules/fast-safe-stringify/",\
           "packageDependencies": [\
             ["fast-safe-stringify", "npm:2.1.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["fast-text-encoding", [\
+        ["npm:1.0.4", {\
+          "packageLocation": "./.yarn/cache/fast-text-encoding-npm-1.0.4-704ce0c49d-aa92d27451.zip/node_modules/fast-text-encoding/",\
+          "packageDependencies": [\
+            ["fast-text-encoding", "npm:1.0.4"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -13985,6 +14009,42 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["gaxios", [\
+        ["npm:4.3.3", {\
+          "packageLocation": "./.yarn/cache/gaxios-npm-4.3.3-3aff5de9aa-0b72a00875.zip/node_modules/gaxios/",\
+          "packageDependencies": [\
+            ["gaxios", "npm:4.3.3"],\
+            ["abort-controller", "npm:3.0.0"],\
+            ["extend", "npm:3.0.2"],\
+            ["https-proxy-agent", "npm:5.0.0"],\
+            ["is-stream", "npm:2.0.1"],\
+            ["node-fetch", "virtual:97e22f9a26f8149f8c656843efb88f331319789773d27e2071d3182ed227f249d66180887be623c995ef86edaf319b200a836498d5dbd5dc2384462a097c4f8e#npm:2.6.7"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:5.0.1", {\
+          "packageLocation": "./.yarn/cache/gaxios-npm-5.0.1-2863002f01-65464122a5.zip/node_modules/gaxios/",\
+          "packageDependencies": [\
+            ["gaxios", "npm:5.0.1"],\
+            ["extend", "npm:3.0.2"],\
+            ["https-proxy-agent", "npm:5.0.0"],\
+            ["is-stream", "npm:2.0.1"],\
+            ["node-fetch", "virtual:97e22f9a26f8149f8c656843efb88f331319789773d27e2071d3182ed227f249d66180887be623c995ef86edaf319b200a836498d5dbd5dc2384462a097c4f8e#npm:2.6.7"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["gcp-metadata", [\
+        ["npm:5.0.0", {\
+          "packageLocation": "./.yarn/cache/gcp-metadata-npm-5.0.0-c60c80c455-b75635e564.zip/node_modules/gcp-metadata/",\
+          "packageDependencies": [\
+            ["gcp-metadata", "npm:5.0.0"],\
+            ["gaxios", "npm:5.0.1"],\
+            ["json-bigint", "npm:1.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["gensync", [\
         ["npm:1.0.0-beta.2", {\
           "packageLocation": "./.yarn/cache/gensync-npm-1.0.0-beta.2-224666d72f-a7437e58c6.zip/node_modules/gensync/",\
@@ -14115,6 +14175,34 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ignore", "npm:5.2.0"],\
             ["merge2", "npm:1.4.1"],\
             ["slash", "npm:3.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["google-auth-library", [\
+        ["npm:8.1.1", {\
+          "packageLocation": "./.yarn/cache/google-auth-library-npm-8.1.1-4d791fc82c-581badf709.zip/node_modules/google-auth-library/",\
+          "packageDependencies": [\
+            ["google-auth-library", "npm:8.1.1"],\
+            ["arrify", "npm:2.0.1"],\
+            ["base64-js", "npm:1.5.1"],\
+            ["ecdsa-sig-formatter", "npm:1.0.11"],\
+            ["fast-text-encoding", "npm:1.0.4"],\
+            ["gaxios", "npm:5.0.1"],\
+            ["gcp-metadata", "npm:5.0.0"],\
+            ["gtoken", "npm:6.1.0"],\
+            ["jws", "npm:4.0.0"],\
+            ["lru-cache", "npm:6.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["google-p12-pem", [\
+        ["npm:4.0.0", {\
+          "packageLocation": "./.yarn/cache/google-p12-pem-npm-4.0.0-6ceed0da1b-f41a88d339.zip/node_modules/google-p12-pem/",\
+          "packageDependencies": [\
+            ["google-p12-pem", "npm:4.0.0"],\
+            ["node-forge", "npm:1.3.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -14365,6 +14453,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packagePeers": [\
             "@types/graphql",\
             "graphql"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["gtoken", [\
+        ["npm:6.1.0", {\
+          "packageLocation": "./.yarn/cache/gtoken-npm-6.1.0-88f5903466-23a1d954e0.zip/node_modules/gtoken/",\
+          "packageDependencies": [\
+            ["gtoken", "npm:6.1.0"],\
+            ["gaxios", "npm:4.3.3"],\
+            ["google-p12-pem", "npm:4.0.0"],\
+            ["jws", "npm:4.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -15238,6 +15338,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["json-bigint", [\
+        ["npm:1.0.0", {\
+          "packageLocation": "./.yarn/cache/json-bigint-npm-1.0.0-8e35bcb143-c67bb93ccb.zip/node_modules/json-bigint/",\
+          "packageDependencies": [\
+            ["json-bigint", "npm:1.0.0"],\
+            ["bignumber.js", "npm:9.1.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["json-parse-better-errors", [\
         ["npm:1.0.2", {\
           "packageLocation": "./.yarn/cache/json-parse-better-errors-npm-1.0.2-7f37637d19-ff2b5ba2a7.zip/node_modules/json-parse-better-errors/",\
@@ -15325,6 +15435,29 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jsx-ast-utils", "npm:3.2.2"],\
             ["array-includes", "npm:3.1.4"],\
             ["object.assign", "npm:4.1.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["jwa", [\
+        ["npm:2.0.0", {\
+          "packageLocation": "./.yarn/cache/jwa-npm-2.0.0-52a7c3f1ca-8f00b71ad5.zip/node_modules/jwa/",\
+          "packageDependencies": [\
+            ["jwa", "npm:2.0.0"],\
+            ["buffer-equal-constant-time", "npm:1.0.1"],\
+            ["ecdsa-sig-formatter", "npm:1.0.11"],\
+            ["safe-buffer", "npm:5.2.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["jws", [\
+        ["npm:4.0.0", {\
+          "packageLocation": "./.yarn/cache/jws-npm-4.0.0-2a24fd53b9-d68d07aa6d.zip/node_modules/jws/",\
+          "packageDependencies": [\
+            ["jws", "npm:4.0.0"],\
+            ["jwa", "npm:2.0.0"],\
+            ["safe-buffer", "npm:5.2.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -16067,6 +16200,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["node-forge", [\
+        ["npm:1.3.1", {\
+          "packageLocation": "./.yarn/cache/node-forge-npm-1.3.1-f31fd566cc-08fb072d3d.zip/node_modules/node-forge/",\
+          "packageDependencies": [\
+            ["node-forge", "npm:1.3.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["node-gyp", [\
         ["npm:9.0.0", {\
           "packageLocation": "./.yarn/unplugged/node-gyp-npm-9.0.0-0eccfca4d1/node_modules/node-gyp/",\
@@ -16181,15 +16323,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/nwsapi-npm-2.2.0-8f05590043-5ef4a9bc0c.zip/node_modules/nwsapi/",\
           "packageDependencies": [\
             ["nwsapi", "npm:2.2.0"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["oauth", [\
-        ["npm:0.9.15", {\
-          "packageLocation": "./.yarn/cache/oauth-npm-0.9.15-a6aae972bc-957c0d8d85.zip/node_modules/oauth/",\
-          "packageDependencies": [\
-            ["oauth", "npm:0.9.15"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -16587,26 +16720,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["passport-google-oauth20", [\
-        ["npm:2.0.0", {\
-          "packageLocation": "./.yarn/cache/passport-google-oauth20-npm-2.0.0-4187da29c8-1d34f4c2da.zip/node_modules/passport-google-oauth20/",\
+      ["passport-custom", [\
+        ["npm:1.1.1", {\
+          "packageLocation": "./.yarn/cache/passport-custom-npm-1.1.1-37dd146ef9-245b265491.zip/node_modules/passport-custom/",\
           "packageDependencies": [\
-            ["passport-google-oauth20", "npm:2.0.0"],\
-            ["passport-oauth2", "npm:1.6.1"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["passport-oauth2", [\
-        ["npm:1.6.1", {\
-          "packageLocation": "./.yarn/cache/passport-oauth2-npm-1.6.1-2799fe66c7-2a5b01a884.zip/node_modules/passport-oauth2/",\
-          "packageDependencies": [\
-            ["passport-oauth2", "npm:1.6.1"],\
-            ["base64url", "npm:3.0.1"],\
-            ["oauth", "npm:0.9.15"],\
-            ["passport-strategy", "npm:1.0.0"],\
-            ["uid2", "npm:0.0.4"],\
-            ["utils-merge", "npm:1.0.1"]\
+            ["passport-custom", "npm:1.1.1"],\
+            ["passport-strategy", "npm:1.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -18982,15 +19101,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/ua-parser-js-npm-0.7.31-aeb4c9aae9-e2f8324a83.zip/node_modules/ua-parser-js/",\
           "packageDependencies": [\
             ["ua-parser-js", "npm:0.7.31"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["uid2", [\
-        ["npm:0.0.4", {\
-          "packageLocation": "./.yarn/cache/uid2-npm-0.0.4-cd02831b83-e92325ce2e.zip/node_modules/uid2/",\
-          "packageDependencies": [\
-            ["uid2", "npm:0.0.4"]\
           ],\
           "linkType": "HARD"\
         }]\

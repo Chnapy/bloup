@@ -1,6 +1,7 @@
 import { Logger, Module } from '@nestjs/common';
 import { ConfigModule as ConfigModuleNest } from '@nestjs/config';
 import joi from 'joi';
+import { requiredEnvsSchema } from '../auth/google.strategy';
 
 const envFileNames = {
   development: '.env.dev',
@@ -24,10 +25,13 @@ Logger.log(`NODE_ENV=${nodeEnv}`, 'env');
       isGlobal: true,
       cache: true,
       expandVariables: true,
-      validationSchema: joi.object({
-        PORT: joi.number().required(),
-        DB_URL: joi.string().required(),
-      }),
+      validationSchema: joi
+        .object({
+          PORT: joi.number().required(),
+          DB_URL: joi.string().required(),
+        })
+        // eslint-disable-next-line unicorn/prefer-spread
+        .concat(requiredEnvsSchema),
       validationOptions: {
         abortEarly: true,
       },

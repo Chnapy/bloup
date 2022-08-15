@@ -1,80 +1,46 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { OAuth2Client } from 'google-auth-library';
 import { OAuthProvider } from '../users/entities/enums/oauth-provider';
 import { UsersService } from '../users/users.service';
-import { Auth } from './entities/auth.entity';
-import { ExpressRequest, GoogleStrategy, GoogleUser } from './google.strategy';
 
 @Injectable()
 export class AuthService {
-  constructor(
-    private usersService: UsersService,
-    private readonly googleStrategy: GoogleStrategy
-  ) {}
+  private readonly client: OAuth2Client;
 
-  async authByGoogle(request: ExpressRequest, code: string): Promise<Auth> {
-    request.query = {
-      code,
-    };
-
-    const googleUser = await new Promise<GoogleUser>((resolve, reject) => {
-      this.googleStrategy.error = (e: unknown) => {
-        reject(e);
-      };
-
-      this.googleStrategy.success = (user_: GoogleUser, info?: unknown) => {
-        resolve(user_);
-      };
-
-      this.googleStrategy.authenticate(request);
-    });
-
-    const getUser = async () => {
-      const user = await this.usersService.findOneBy({
-        email: googleUser.email,
-      });
-      if (user) {
-        return user;
-      }
-
-      return await this.usersService.create({
-        oauthProvider: OAuthProvider.GOOGLE,
-        oauthId: googleUser.id,
-        email: googleUser.email,
-        name: googleUser.givenName ?? googleUser.displayName,
-        picture: googleUser.picture,
-      });
-    };
-
-    return new Auth(
-      googleUser.accessToken,
-      googleUser.accessToken,
-      await getUser()
-    );
+  constructor(private usersService: UsersService) {
+    this.client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID!);
   }
 
-  // googleLogin(req: GraphQLContext['req']) {
-  //   console.log('user', req.user);
-  //   if (!req.user) {
-  //     return 'No user from google';
-  //   }
+  verifyFromToken = async (token: string | undefined) => {
+    if (!token) {
+      throw new UnauthorizedException('Header authorization not defined');
+    }
 
-  //   return {
-  //     message: 'User information from google',
-  //     user: req.user,
-  //   };
-  // }
+    const ticket = await this.client.verifyIdToken({
+      idToken: token,
+    });
 
-  // async validateUser(
-  //   username: string,
-  //   pass: string
-  // ): Promise<User | undefined> {
-  //   // const user = await this.usersService.findOne(username);
+    const payload = ticket.getPayload();
+    const oauthId = ticket.getUserId();
 
-  //   // if (user && user.password === pass) {
-  //   //   const { password, ...result } = user;
-  //   //   return result;
-  //   // }
+    if (!payload || !oauthId) {
+      throw new TypeError('No payload');
+    }
 
-  //   return undefined;
-  // }
+    const user =
+      (await this.usersService.findOneBy({
+        oauthProvider: OAuthProvider.GOOGLE,
+        oauthId,
+      })) ??
+      (await this.usersService.create({
+        oauthProvider: OAuthProvider.GOOGLE,
+        oauthId,
+        email: payload.email!,
+        name: payload.given_name ?? payload.name!,
+        picture: payload.picture,
+      }));
+
+    // console.log('PAYLOAD', payload, ticket.getAttributes(), ticket.getUserId());
+    return user;
+  };
 }
