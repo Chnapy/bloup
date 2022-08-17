@@ -27,6 +27,6 @@ services:
         window: 120s
     healthcheck:
       test: 'curl --fail http://localhost:80'
-      interval: 30s
-      timeout: 10s
+      interval: 20s
+      timeout: 5s
       retries: 4

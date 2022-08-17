@@ -7,11 +7,14 @@ services:
       - NODE_ENV=staging
       - PORT=3333
       - DB_URL=mongodb://mongodb/bloup-staging
+      - GOOGLE_CLIENT_ID # secret
     build:
       context: ../../../..
       dockerfile: packages/api/environment/staging/Dockerfile.staging
     ports:
       - '3333:3333'
+    networks:
+      - api
     depends_on:
       - mongodb
     deploy:
@@ -30,11 +33,21 @@ services:
         max_attempts: 3
         window: 120s
     healthcheck:
-      # TODO fix healthcheck not working
-      disable: true
-      # test: 'curl --fail http://build:3333/graphql'
-      interval: 30s
-      timeout: 10s
+      # Send GraphQL introspection query
+      # During healthcheck, 'nameservice' hosts are not yet defined, so localhost is used instead
+      test:
+        [
+          'CMD',
+          'curl',
+          '--fail',
+          'http://localhost:3333/graphql',
+          '--data-raw',
+          '{ "operationName": "IntrospectionQuery", "query": "query IntrospectionQuery { __schema { queryType { name } } }", "variables": {} }',
+          '-H',
+          'content-type: application/json',
+        ]
+      interval: 20s
+      timeout: 5s
       retries: 4
 
   mongodb:
@@ -43,9 +56,14 @@ services:
       - MONGODB_DATABASE="bloup-staging"
     ports:
       - '37017:27017'
+    networks:
+      - api
     volumes:
       - mongodb:/data/db
       - mongodb_config:/data/configdb
+
+networks:
+  api:
 
 volumes:
   mongodb:

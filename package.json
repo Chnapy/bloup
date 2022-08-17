@@ -21,7 +21,7 @@
     "c:test:watch": "jest $INIT_CWD --cache --passWithNoTests --watch",
     "c:type": "cd $INIT_CWD && tsc -b",
     "gen:tsconfig": "ts-node ${PROJECT_CWD}/scripts/generators/tsconfig.ts && prettier -w ${PROJECT_CWD}/**/tsconfig.json",
-    "test": "yarn workspaces foreach -v --exclude 'bloup' run c:test ${0:-}"
+    "x:ts-node": "cd $INIT_CWD && ts-node"
   },
   "devDependencies": {
     "@babel/core": "7.18.10",
