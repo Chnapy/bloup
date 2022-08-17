@@ -1,9 +1,22 @@
-.yarn/releases/** binary
-.yarn/plugins/** binary
+# Mark files as binary to prevent git from trying to merge it
+
+.yarn/releases/** binary linguist-vendored
+.yarn/plugins/** binary linguist-vendored
 
 .yarn/cache/** linguist-vendored
-.yarn/unplugged/** linguist-vendored
-.yarn/sdks/** linguist-vendored
+.yarn/unplugged/** binary linguist-vendored
+.yarn/sdks/** binary linguist-vendored
 
-.pnp.* linguist-generated
-*.lock linguist-generated
+/.pnp.* binary linguist-generated
+/*.lock binary linguist-generated
+
+**/.env.* linguist-language=Shell
+**/Dockerfile.* linguist-language=Dockerfile
+.graphqlrc linguist-language=JSON
+.prettierrc linguist-language=JSON
+.nvmrc linguist-language=Text
+**/.gitkeep linguist-language=Text
+
+# Ensure GitHub doesn't show the comments as errors
+/.vscode/*.json linguist-language=JSON5
+**/tsconfig.json linguist-language=JSON5
