@@ -10,11 +10,13 @@ const envFileNames = {
   test: '.env.test',
 };
 
-const nodeEnv = joi
+const nodeEnvSchema = joi
   .string()
-  .valid(...Object.keys(envFileNames))
-  .default('development')
-  .validate(process.env.NODE_ENV).value as keyof typeof envFileNames;
+  .required()
+  .valid(...Object.keys(envFileNames));
+
+const nodeEnv = nodeEnvSchema.validate(process.env.NODE_ENV)
+  .value as keyof typeof envFileNames;
 
 Logger.log(`NODE_ENV=${nodeEnv}`, 'env');
 
@@ -27,6 +29,7 @@ Logger.log(`NODE_ENV=${nodeEnv}`, 'env');
       expandVariables: true,
       validationSchema: joi
         .object({
+          NODE_ENV: nodeEnvSchema,
           PORT: joi.number().required(),
           DB_URL: joi.string().required(),
         })

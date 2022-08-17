@@ -6,6 +6,8 @@ on:
       - master
   pull_request:
 
+# TODO use "concurrency", for deployment only
+
 jobs:
   checks:
     name: Check - Packages / Format / Lint / Type / Tests
@@ -37,10 +39,30 @@ jobs:
         run: yarn c:test:ci
 
   build-api:
-    name: Build api + Deploy if master - staging
+    name: Build api
+    if: "!contains(github.ref, 'master')"
     needs:
       - checks
     runs-on: ubuntu-latest
+
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build image
+        run: docker compose -f packages/api/environment/staging/docker-compose.staging.yml build
+
+  deploy-api:
+    name: Build & deploy api - staging
+    if: contains(github.ref, 'master')
+    needs:
+      - checks
+    runs-on: ubuntu-latest
+
+    environment:
+      name: staging-api
+      url: http://vps-0c88ff97.vps.ovh.net:3333/graphql
+
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v3
@@ -49,13 +71,11 @@ jobs:
         run: docker compose -f packages/api/environment/staging/docker-compose.staging.yml build
 
       - name: Push image to GitHub Container registry
-        if: contains(github.ref, 'master')
         run: |
           echo "${{ secrets.CR_PAT }}" | docker login ghcr.io -u chnapy --password-stdin
           docker compose -f packages/api/environment/staging/docker-compose.staging.yml push
 
       - name: Copy docker-compose.yml file to remote server
-        if: contains(github.ref, 'master')
         uses: appleboy/scp-action@master
         with:
           host: vps-0c88ff97.vps.ovh.net
@@ -66,20 +86,24 @@ jobs:
           strip_components: 4
 
       - name: Update remote server container with latest image
-        if: contains(github.ref, 'master')
         uses: appleboy/ssh-action@master
         with:
           host: vps-0c88ff97.vps.ovh.net
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            docker stack deploy --prune -c ./staging/api/docker-compose.staging.yml bloup-api-staging --with-registry-auth
+            env GOOGLE_CLIENT_ID="${{ secrets.GOOGLE_CLIENT_ID }}" \
+              docker stack deploy --prune -c ./staging/api/docker-compose.staging.yml bloup-api-staging --with-registry-auth
+
+            docker run --rm -v /var/run/docker.sock:/var/run/docker.sock sudobmitch/docker-stack-wait bloup-api-staging
 
   build-web-app:
-    name: Build web-app + Deploy
+    name: Build web-app
+    if: "!contains(github.ref, 'master')"
     needs:
-      - build-api
+      - checks
     runs-on: ubuntu-latest
+
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v3
@@ -87,14 +111,31 @@ jobs:
       - name: Build image
         run: docker compose -f packages/web-app/environment/staging/docker-compose.staging.yml build
 
+  deploy-web-app:
+    name: Build & deploy web-app - staging
+    if: contains(github.ref, 'master')
+    needs:
+      - checks
+    runs-on: ubuntu-latest
+
+    environment:
+      name: staging-web-app
+      url: http://vps-0c88ff97.vps.ovh.net
+
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build image
+        run: docker compose -f packages/web-app/environment/staging/docker-compose.staging.yml build
+
       - name: Push image to GitHub Container registry
-        if: contains(github.ref, 'master')
         run: |
           echo "${{ secrets.CR_PAT }}" | docker login ghcr.io -u chnapy --password-stdin
           docker compose -f packages/web-app/environment/staging/docker-compose.staging.yml push
 
       - name: Copy docker-compose.yml file to remote server
-        if: contains(github.ref, 'master')
         uses: appleboy/scp-action@master
         with:
           host: vps-0c88ff97.vps.ovh.net
@@ -105,7 +146,6 @@ jobs:
           strip_components: 4
 
       - name: Update remote server container with latest image
-        if: contains(github.ref, 'master')
         uses: appleboy/ssh-action@master
         with:
           host: vps-0c88ff97.vps.ovh.net
@@ -113,3 +153,5 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             docker stack deploy --prune -c ./staging/web-app/docker-compose.staging.yml bloup-web-app-staging --with-registry-auth
+
+            docker run --rm -v /var/run/docker.sock:/var/run/docker.sock sudobmitch/docker-stack-wait bloup-web-app-staging
