@@ -1,8 +1,9 @@
 .yarn/releases/** binary
 .yarn/plugins/** binary
-.yarn/unplugged/** binary
+
+.yarn/cache/** linguist-vendored
+.yarn/unplugged/** linguist-vendored
+.yarn/sdks/** linguist-vendored
 
 .pnp.* linguist-generated
 *.lock linguist-generated
-
-.yarn/** linguist-vendored
